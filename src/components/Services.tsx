@@ -1,55 +1,52 @@
 import { motion } from "framer-motion";
-import { Globe, Smartphone, Brain } from "lucide-react";
+import { AlertTriangle, DollarSign, Cpu } from "lucide-react";
 
-const services = [
+const impacts = [
   {
-    icon: Globe,
-    title: "Web Development",
-    tag: "Next.js · React · Edge",
-    desc: "Responsive, SEO-optimized, and lightning-fast applications. Built on modern frameworks with edge-deployed performance.",
-    features: ["Server Components", "Sub-second TTFB", "100/100 Lighthouse"],
+    icon: AlertTriangle,
+    title: "Operational Impact",
+    tag: "Instability & Downtime",
+    desc: "AI workloads ramp thousands of GPUs simultaneously, creating unpredictable millisecond-scale power spikes.",
+    features: ["UPS bypass failures", "Costly downtime events", "Damage to GPUs and critical equipment", "System instability"],
   },
   {
-    icon: Smartphone,
-    title: "Mobile Solutions",
-    tag: "iOS · Android · React Native",
-    desc: "Native-grade interfaces that feel instinctive. We design and ship mobile experiences users return to daily.",
-    features: ["Cross-platform", "Offline-first", "Native modules"],
+    icon: DollarSign,
+    title: "Economic Impact",
+    tag: "Per Site / Per MW",
+    desc: "Each downtime event and every megawatt of stranded capacity carries a measurable bottom-line cost.",
+    features: ["$500K+ per downtime event", "Up to 30% stranded power capacity", "$1.5M infrastructure cost per 1 MW", "$300K/year in unused GPUs per 1 MW"],
   },
   {
-    icon: Brain,
-    title: "Generative AI Integration",
-    tag: "Gemini · Imagen · GPT-5",
-    desc: "World-class reasoning and content generation embedded into your product. From chat to multimodal pipelines.",
-    features: ["RAG pipelines", "Streaming UX", "Vector search"],
+    icon: Cpu,
+    title: "The PrePeak Solution",
+    tag: "Embedded AI Layer",
+    desc: "An AI-controlled layer that predicts spikes from workload ramp patterns and triggers a dedicated energy buffer.",
+    features: ["Predictive — not reactive", "Plug-and-play deployment", "Independent of software stack", "Unlocks up to 30% capacity"],
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="relative py-32 border-t border-border/40">
+    <section id="problem" className="relative py-32 border-t border-border/40">
       <div className="absolute inset-0 bg-grid-fine opacity-30" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-xl">
-            <p className="text-xs font-mono uppercase tracking-widest text-primary">Core Capabilities</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-primary">The Peak — The Problem</p>
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
-              The full stack of <span className="text-gradient-accent">high software.</span>
+              AI data centers are becoming <span className="text-gradient-accent">unstable.</span>
             </h2>
           </div>
           <p className="md:max-w-sm text-muted-foreground">
-            Three disciplines, one team. Every engagement spans engineering, design, and intelligence.
+            The spike hits. Downtime. Damage. Loss. PrePeak acts before the peak.
           </p>
         </div>
 
         <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {services.map((s, i) => (
-            <motion.div
-              key={s.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+          {impacts.map((s, i) => (
+            <motion.div key={s.title}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group relative rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-xl overflow-hidden transition-all hover:border-primary/40"
             >
               <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
@@ -62,8 +59,8 @@ export function Services() {
                 <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
                 <ul className="mt-6 space-y-2 border-t border-border/60 pt-5">
                   {s.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-sm text-foreground/80">
-                      <span className="h-1 w-1 rounded-full bg-primary" />
+                    <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
                       {f}
                     </li>
                   ))}

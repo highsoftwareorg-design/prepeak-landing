@@ -11,10 +11,10 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "High Software — Empowering Business Through Digital Transformation" },
-      { name: "description", content: "High Software builds high-performance web, mobile, and AI-powered solutions. From cluttered complexity to minimalist high-tech efficiency." },
-      { property: "og:title", content: "High Software — Digital Transformation, Engineered" },
-      { property: "og:description", content: "Enterprise-grade web, mobile, and Generative AI solutions. We turn technical frustration into seamless products." },
+      { title: "PrePeak.ai — AI-Powered Power Stability for AI Data Centers" },
+      { name: "description", content: "PrePeak predicts GPU power spikes before they occur, preventing downtime and unlocking up to 30% of stranded power capacity in AI data centers." },
+      { property: "og:title", content: "PrePeak.ai — We act before the peak" },
+      { property: "og:description", content: "An embedded AI control layer that predicts and prevents power spikes in AI data centers." },
     ],
   }),
   component: Index,
