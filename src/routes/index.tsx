@@ -1,26 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { ProcessTimeline } from "@/components/ProcessTimeline";
+import { Services } from "@/components/Services";
+import { TechSpotlight } from "@/components/TechSpotlight";
+import { Team } from "@/components/Team";
+import { Contact } from "@/components/Contact";
+import { Footer } from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "High Software — Empowering Business Through Digital Transformation" },
+      { name: "description", content: "High Software builds high-performance web, mobile, and AI-powered solutions. From cluttered complexity to minimalist high-tech efficiency." },
+      { property: "og:title", content: "High Software — Digital Transformation, Engineered" },
+      { property: "og:description", content: "Enterprise-grade web, mobile, and Generative AI solutions. We turn technical frustration into seamless products." },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <ProcessTimeline />
+        <Services />
+        <TechSpotlight />
+        <Team />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
