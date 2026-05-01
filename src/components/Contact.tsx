@@ -13,26 +13,22 @@ export function Contact() {
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} aria-hidden />
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }}
           className="grid lg:grid-cols-2 gap-12 items-start"
         >
           <div>
             <p className="text-xs font-mono uppercase tracking-widest text-primary">Contact</p>
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
-              Ready to <span className="text-gradient-accent">transform?</span>
+              Let's build the <span className="text-gradient-accent">AI stability</span> together.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-              Tell us about your product. We respond within one business day with a candid assessment and next steps.
+              60–90 day pilot. Monitoring-first. No operational risk.
+              We don't ask for trust — we prove value first.
             </p>
-            <a
-              href="mailto:hello@highsoftware.dev"
-              className="mt-8 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
-            >
+            <a href="mailto:hello@prepeak.ai" className="mt-8 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors">
               <Mail className="h-4 w-4" />
-              hello@highsoftware.dev
+              hello@prepeak.ai
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>
@@ -48,7 +44,7 @@ export function Contact() {
               </div>
               <div>
                 <label className="text-xs text-muted-foreground font-mono">COMPANY</label>
-                <Input placeholder="Acme Inc." className="mt-1.5 bg-background/40 border-border" />
+                <Input placeholder="Data Center Inc." className="mt-1.5 bg-background/40 border-border" />
               </div>
             </div>
             <div>
@@ -56,11 +52,11 @@ export function Contact() {
               <Input required type="email" placeholder="you@company.com" className="mt-1.5 bg-background/40 border-border" />
             </div>
             <div>
-              <label className="text-xs text-muted-foreground font-mono">PROJECT</label>
-              <Textarea required rows={4} placeholder="What are you building?" className="mt-1.5 bg-background/40 border-border resize-none" />
+              <label className="text-xs text-muted-foreground font-mono">TELL US ABOUT YOUR INFRASTRUCTURE</label>
+              <Textarea required rows={4} placeholder="MW capacity, GPU fleet, current pain points..." className="mt-1.5 bg-background/40 border-border resize-none" />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-foreground text-background hover:bg-foreground/90">
-              {sent ? "Message sent ✓" : "Send message"}
+            <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+              {sent ? "Message sent ✓" : "Request a Pilot"}
             </Button>
           </form>
         </motion.div>

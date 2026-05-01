@@ -1,58 +1,33 @@
 import { motion } from "framer-motion";
-import { Search, Code2, Layout, Rocket } from "lucide-react";
+import { Activity, Brain, Zap, ShieldCheck } from "lucide-react";
 
 const phases = [
-  {
-    n: "01",
-    icon: Search,
-    title: "Identify Bottlenecks",
-    desc: "We audit your stack, surface technical debt, and map the friction points blocking performance and scale.",
-  },
-  {
-    n: "02",
-    icon: Code2,
-    title: "Architect Clean, Scalable Code",
-    desc: "Modern patterns, typed contracts, and modular systems designed to grow with your product, not against it.",
-  },
-  {
-    n: "03",
-    icon: Layout,
-    title: "Deploy Intuitive UI/UX",
-    desc: "Interfaces that feel inevitable. Pixel-perfect, accessible, and engineered for measurable conversion.",
-  },
-  {
-    n: "04",
-    icon: Rocket,
-    title: "Full Digital Mastery",
-    desc: "Continuous delivery, observability, and AI-augmented workflows. You own a product that compounds.",
-  },
+  { n: "01", icon: Activity, title: "Monitor", desc: "Sensors track real-time current, voltage, and temperature across the entire data center." },
+  { n: "02", icon: Brain, title: "Predict", desc: "AI learns workload patterns and predicts power spikes up to 1000ms before they occur." },
+  { n: "03", icon: Zap, title: "Trigger", desc: "Upon detection, the system instantly activates energy from dedicated high-speed buffers." },
+  { n: "04", icon: ShieldCheck, title: "Stabilize", desc: "Stabilizes the system before the load impacts critical infrastructure or GPUs." },
 ];
 
 export function ProcessTimeline() {
   return (
-    <section id="process" className="relative py-32">
+    <section id="how" className="relative py-32">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary">The Transformation</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-primary">How PrePeak Works</p>
           <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
-            From cluttered complexity to <span className="text-gradient-accent">minimalist mastery.</span>
+            From reactive to <span className="text-gradient-accent">predictive power management.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            A four-phase engineering blueprint we apply to every engagement.
+            PrePeak combines sensors, AI algorithms, and intelligent control into one embedded layer.
           </p>
         </div>
 
         <div className="relative mt-20 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {/* connector line */}
           <div className="hidden lg:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent" />
-
           {phases.map((p, i) => (
-            <motion.div
-              key={p.n}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
+            <motion.div key={p.n}
+              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1 }}
               className="relative group"
             >
               <div className="relative rounded-xl border border-border bg-surface/40 p-6 backdrop-blur-xl transition-all hover:border-primary/40 hover:bg-surface/70 h-full">
