@@ -1,18 +1,20 @@
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import musabImg from "@/assets/musab.jpg";
+import muhammadImg from "@/assets/muhammad.jpg";
 
 const team = [
   {
     name: "Musab Mahamid",
     role: "Founder & CEO",
     bio: "Senior Electrical Engineer with extensive experience designing large-scale, mission-critical electrical systems.",
-    initials: "MM",
+    image: musabImg,
   },
   {
     name: "Muhammad Wattad",
     role: "Co-Founder & CTO",
     bio: "Ph.D in AI & Computer Vision from the Technion. Previously at Intel, eBay, and Mobileye.",
-    initials: "MW",
+    image: muhammadImg,
   },
 ];
 
@@ -38,9 +40,9 @@ export function Team() {
               className="group relative rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-xl transition-all hover:border-primary/40"
             >
               <div className="flex items-start gap-5">
-                <div className="relative flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary/30 to-blue-glow/20 ring-1 ring-primary/40 font-mono font-semibold text-foreground">
-                  {m.initials}
-                  <div className="absolute -inset-1 rounded-2xl bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
+                <div className="relative h-20 w-20 shrink-0 rounded-2xl ring-1 ring-primary/40 bg-gradient-to-br from-primary/30 to-blue-glow/20 overflow-hidden">
+                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
+                  <div className="absolute -inset-1 rounded-2xl bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" aria-hidden />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold">{m.name}</h3>
