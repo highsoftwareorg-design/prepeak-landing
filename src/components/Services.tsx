@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { AlertTriangle, DollarSign, Cpu } from "lucide-react";
+import { TiltCard } from "./TiltCard";
 
 const impacts = [
   {
@@ -45,27 +46,30 @@ export function Services() {
         <div className="mt-16 grid gap-6 md:grid-cols-3">
           {impacts.map((s, i) => (
             <motion.div key={s.title}
-              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-xl overflow-hidden transition-all hover:border-primary/40"
+              initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: i * 0.12 }}
             >
-              <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
-              <div className="relative">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 ring-1 ring-primary/30">
-                  <s.icon className="h-6 w-6 text-primary" strokeWidth={1.8} />
+              <TiltCard className="h-full rounded-2xl">
+                <div className="group relative h-full rounded-2xl border border-border bg-surface/50 p-8 backdrop-blur-xl overflow-hidden transition-colors hover:border-primary/50">
+                  <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
+                  <div className="relative">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 ring-1 ring-primary/30">
+                      <s.icon className="h-6 w-6 text-primary" strokeWidth={1.8} />
+                    </div>
+                    <p className="mt-6 font-mono text-xs text-muted-foreground">{s.tag}</p>
+                    <h3 className="mt-2 text-2xl font-semibold tracking-tight">{s.title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                    <ul className="mt-6 space-y-2 border-t border-border/60 pt-5">
+                      {s.features.map((f) => (
+                        <li key={f} className="flex items-start gap-2 text-sm text-foreground/85">
+                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                          {f}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <p className="mt-6 font-mono text-xs text-muted-foreground">{s.tag}</p>
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <ul className="mt-6 space-y-2 border-t border-border/60 pt-5">
-                  {s.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-primary" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </TiltCard>
             </motion.div>
           ))}
         </div>
