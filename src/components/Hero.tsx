@@ -110,6 +110,60 @@ export function Hero() {
   );
 }
 
+function ServerLeds() {
+  // Hand-placed positions roughly aligned to server racks; deterministic so SSR matches
+  const leds = [
+    { x: 8, y: 38, d: 1.6, h: 142 }, { x: 8, y: 46, d: 2.2, h: 142 },
+    { x: 8, y: 54, d: 1.9, h: 150 }, { x: 8, y: 62, d: 2.6, h: 142 },
+    { x: 18, y: 36, d: 1.8, h: 142 }, { x: 18, y: 48, d: 2.4, h: 150 },
+    { x: 18, y: 60, d: 2.0, h: 142 }, { x: 28, y: 40, d: 2.2, h: 142 },
+    { x: 28, y: 52, d: 1.7, h: 150 }, { x: 28, y: 64, d: 2.5, h: 142 },
+    { x: 72, y: 38, d: 2.1, h: 142 }, { x: 72, y: 50, d: 1.9, h: 142 },
+    { x: 72, y: 62, d: 2.3, h: 150 }, { x: 82, y: 40, d: 1.8, h: 142 },
+    { x: 82, y: 52, d: 2.6, h: 142 }, { x: 82, y: 64, d: 2.0, h: 150 },
+    { x: 92, y: 42, d: 2.2, h: 142 }, { x: 92, y: 56, d: 1.7, h: 142 },
+    { x: 48, y: 30, d: 1.5, h: 142 }, { x: 52, y: 32, d: 1.5, h: 150 },
+  ];
+  return (
+    <div className="absolute inset-0 pointer-events-none mix-blend-screen">
+      {leds.map((l, i) => (
+        <motion.span
+          key={i}
+          className="absolute rounded-full"
+          style={{
+            left: `${l.x}%`,
+            top: `${l.y}%`,
+            width: 6,
+            height: 6,
+            background: `oklch(0.86 0.2 ${l.h})`,
+            boxShadow: `0 0 10px 2px oklch(0.86 0.2 ${l.h} / 0.9), 0 0 24px 6px oklch(0.82 0.21 ${l.h} / 0.5)`,
+          }}
+          animate={{ opacity: [0.15, 1, 0.3, 0.95, 0.2], scale: [0.9, 1.15, 1, 1.1, 0.9] }}
+          transition={{ duration: l.d + 1.6, repeat: Infinity, ease: "easeInOut", delay: (i % 7) * 0.35 }}
+        />
+      ))}
+
+      {/* Occasional fast blink — diagnostic LEDs */}
+      {[{ x: 14, y: 44 }, { x: 24, y: 56 }, { x: 76, y: 46 }, { x: 88, y: 58 }].map((l, i) => (
+        <motion.span
+          key={`blink-${i}`}
+          className="absolute rounded-full"
+          style={{
+            left: `${l.x}%`,
+            top: `${l.y}%`,
+            width: 4,
+            height: 4,
+            background: "oklch(0.9 0.22 142)",
+            boxShadow: "0 0 8px 2px oklch(0.86 0.2 142 / 0.9)",
+          }}
+          animate={{ opacity: [0, 1, 0, 0, 1, 0] }}
+          transition={{ duration: 2.4, repeat: Infinity, ease: "linear", delay: i * 0.6 }}
+        />
+      ))}
+    </div>
+  );
+}
+
 function SpikeWaveform() {
   const points = [
     [0, 60], [8, 58], [15, 62], [22, 55], [30, 60], [38, 50], [44, 65],
