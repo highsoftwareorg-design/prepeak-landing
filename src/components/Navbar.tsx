@@ -7,6 +7,7 @@ const links = [
   { label: "The Problem", href: "#problem" },
   { label: "How it Works", href: "#how" },
   { label: "Results", href: "#results" },
+  { label: "Compare", href: "#competitors" },
   { label: "Market", href: "#market" },
   { label: "Team", href: "#team" },
 ];

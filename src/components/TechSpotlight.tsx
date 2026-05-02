@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Target, Clock, TrendingDown, Building2 } from "lucide-react";
+import { Target, Clock, Gauge, ShieldCheck, FileText, Cpu } from "lucide-react";
 
 const stats = [
   { v: "98%", k: "Prediction Accuracy", icon: Target },
   { v: "1000ms", k: "Detection Lead Time", icon: Clock },
-  { v: "10%", k: "False Negative Rate", icon: TrendingDown },
-  { v: "$2.05M", k: "20-yr TCO Savings / MW", icon: Building2 },
+  { v: "<1s", k: "Response Before Spike", icon: Gauge },
+  { v: "30%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
 ];
 
 const customers = [
@@ -66,6 +66,34 @@ export function TechSpotlight() {
               </div>
             </div>
           </motion.div>
+
+          {/* IP & Patent */}
+          <div className="mt-10 grid md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6 }}
+              className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+            >
+              <FileText className="h-5 w-5 text-primary" />
+              <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">Patent</p>
+              <h4 className="mt-1 text-lg font-semibold">Predictive AI Control Layer</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Patent covers prevention of extreme electrical load spikes — including those caused by synchronized GPU workloads in AI data centers.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
+              className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+            >
+              <Cpu className="h-5 w-5 text-primary" />
+              <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">Technology</p>
+              <h4 className="mt-1 text-lg font-semibold">Deep Time-Series Prediction</h4>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                Time-series data prediction with deep learning. All technology, code and IP are fully owned by PrePeak.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </section>
 
