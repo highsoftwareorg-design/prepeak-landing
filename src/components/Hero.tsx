@@ -7,24 +7,26 @@ import serverRoom from "@/assets/server-room-hero.jpg";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-20 pb-32 min-h-[100vh] flex items-center">
+    <section className="relative overflow-hidden pt-20 pb-32 min-h-[100vh] flex items-center isolate">
       {/* Server room background */}
-      <div className="absolute inset-0" aria-hidden>
+      <div className="absolute inset-0 -z-20" aria-hidden>
         <img
           src={serverRoom}
           alt=""
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-center opacity-90"
           width={1920}
           height={1080}
         />
-        {/* Layered overlays for legibility & brand cohesion */}
-        <div className="absolute inset-0 bg-background/55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
+        {/* Soft overlays for legibility while keeping the room visible */}
+        <div className="absolute inset-0 bg-background/30" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-background/80 to-transparent" />
       </div>
 
-      <LightOrbs density="normal" />
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} aria-hidden />
+      <div className="absolute inset-0 -z-10 mix-blend-screen opacity-60">
+        <LightOrbs density="subtle" />
+      </div>
+      <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
