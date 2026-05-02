@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
-import { Target, Clock, TrendingDown, Building2 } from "lucide-react";
+import { Target, Clock, Gauge, ShieldCheck, FileText, Cpu } from "lucide-react";
 
 const stats = [
   { v: "98%", k: "Prediction Accuracy", icon: Target },
   { v: "1000ms", k: "Detection Lead Time", icon: Clock },
-  { v: "10%", k: "False Negative Rate", icon: TrendingDown },
-  { v: "$2.05M", k: "20-yr TCO Savings / MW", icon: Building2 },
+  { v: "<1s", k: "Response Before Spike", icon: Gauge },
+  { v: "30%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
 ];
 
 const customers = [
