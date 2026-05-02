@@ -3,86 +3,72 @@ import { ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LightOrbs } from "./LightOrbs";
 import logo from "@/assets/prepeak-logo.png";
+import serverRoom from "@/assets/server-room-hero.jpg";
 
 export function Hero() {
-  const word = "PREPEAK";
-  const letters = word.split("");
-
   return (
-    <section className="relative overflow-hidden pt-24 pb-32">
-      <LightOrbs density="dense" />
+    <section className="relative overflow-hidden pt-20 pb-32 min-h-[100vh] flex items-center">
+      {/* Server room background */}
+      <div className="absolute inset-0" aria-hidden>
+        <img
+          src={serverRoom}
+          alt=""
+          className="h-full w-full object-cover object-center"
+          width={1920}
+          height={1080}
+        />
+        {/* Layered overlays for legibility & brand cohesion */}
+        <div className="absolute inset-0 bg-background/55" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/40 to-background" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
+      </div>
+
+      <LightOrbs density="normal" />
       <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} aria-hidden />
 
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        {/* Logo reveal */}
+      <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
+        {/* Big animated logo (replaces wordmark) */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.8, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto mb-6 flex items-center justify-center"
+          initial={{ opacity: 0, scale: 0.7, y: 30, filter: "blur(20px)" }}
+          animate={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+          className="mx-auto flex items-center justify-center"
         >
           <motion.img
             src={logo}
-            alt="PrePeak logo"
-            className="h-20 w-auto drop-shadow-[0_0_30px_oklch(0.82_0.21_142_/_0.5)]"
-            initial={{ filter: "blur(12px)" }}
-            animate={{ filter: "blur(0px)" }}
-            transition={{ duration: 1.2 }}
+            alt="PrePeak"
+            className="h-40 md:h-56 lg:h-64 w-auto drop-shadow-[0_0_60px_oklch(0.82_0.21_142_/_0.6)]"
+            animate={{ y: [0, -8, 0] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
         </motion.div>
 
-        {/* Wordmark text-reveal */}
-        <div className="overflow-hidden">
-          <motion.h1
-            className="text-5xl md:text-8xl font-bold tracking-tight leading-[1] text-gradient-accent"
-            initial="hidden"
-            animate="show"
-            variants={{
-              show: { transition: { staggerChildren: 0.06, delayChildren: 0.2 } },
-              hidden: {},
-            }}
-          >
-            {letters.map((l, i) => (
-              <motion.span
-                key={i}
-                className="inline-block"
-                variants={{
-                  hidden: { y: "110%", opacity: 0 },
-                  show: { y: "0%", opacity: 1, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-                }}
-              >
-                {l}
-              </motion.span>
-            ))}
-          </motion.h1>
-        </div>
-
         <motion.div
-          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.9 }}
-          className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-3 py-1 text-xs text-primary backdrop-blur"
+          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-mono text-primary backdrop-blur"
         >
           <Zap className="h-3 w-3" />
-          <span>Predict Spikes. Protect Uptime.</span>
+          <span>PREDICT SPIKES · PROTECT UPTIME</span>
         </motion.div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }}
-          className="mt-6 text-balance text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1]"
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
+          className="mt-6 text-balance text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]"
         >
           AI-Powered Power Stability for{" "}
           <span className="text-gradient-accent">AI Data Centers.</span>
-        </motion.h2>
+        </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.1 }}
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.85 }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground"
         >
-          PrePeak predicts GPU power spikes <strong className="text-foreground">1000ms before they occur</strong> —
+          We predict GPU power spikes <strong className="text-foreground">1000ms before they occur</strong> —
           preventing downtime, protecting equipment, and unlocking up to 30% of stranded power capacity.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.2 }}
+          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_-10px] shadow-primary/60">
@@ -91,14 +77,14 @@ export function Hero() {
               <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-border bg-surface/40 hover:bg-surface">
+          <Button asChild size="lg" variant="outline" className="border-border bg-surface/40 hover:bg-surface backdrop-blur">
             <a href="#how">See How It Works</a>
           </Button>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.4 }}
-          className="relative mx-auto mt-20 max-w-3xl"
+          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.2 }}
+          className="relative mx-auto mt-16 max-w-3xl"
         >
           <SpikeWaveform />
         </motion.div>
