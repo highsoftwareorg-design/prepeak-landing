@@ -17,6 +17,21 @@ export function Hero() {
           width={1920}
           height={1080}
         />
+
+        {/* Animated green LED breathing pulse — global ambient */}
+        <motion.div
+          className="absolute inset-0 mix-blend-screen pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 40% at 50% 55%, oklch(0.82 0.21 142 / 0.35), transparent 70%)",
+          }}
+          animate={{ opacity: [0.4, 0.9, 0.45, 0.8, 0.4] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
+
+        {/* Flickering LED dots scattered along server racks */}
+        <ServerLeds />
+
         {/* Soft overlays for legibility while keeping the room visible */}
         <div className="absolute inset-0 bg-background/30" />
         <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent" />
