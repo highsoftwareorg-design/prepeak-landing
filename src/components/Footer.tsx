@@ -1,6 +1,5 @@
 import { Linkedin, Twitter } from "lucide-react";
 import logo from "@/assets/prepeak-logo.png";
-import highsoftware from "@/assets/highsoftware.png";
 
 export function Footer() {
   return (
@@ -13,22 +12,13 @@ export function Footer() {
           </span>
         </div>
 
-        <a
-          href="#"
-          className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity"
-          aria-label="Made by HighSoftware"
-        >
-          <img src={highsoftware} alt="Made by HighSoftware" className="h-8 w-auto" />
-        </a>
+        <p className="text-xs text-muted-foreground font-mono">
+          © {new Date().getFullYear()} PrePeak.ai — We act before the peak.
+        </p>
 
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
-          <p className="text-xs text-muted-foreground font-mono">
-            © {new Date().getFullYear()} PrePeak.ai — We act before the peak.
-          </p>
-          <div className="flex items-center gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors"><Twitter className="h-4 w-4" /></a>
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors"><Linkedin className="h-4 w-4" /></a>
-          </div>
+        <div className="flex items-center gap-4">
+          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors"><Twitter className="h-4 w-4" /></a>
+          <a href="#" className="text-muted-foreground hover:text-foreground transition-colors"><Linkedin className="h-4 w-4" /></a>
         </div>
       </div>
     </footer>
