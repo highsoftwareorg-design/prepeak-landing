@@ -73,6 +73,7 @@ export function Hero() {
       </div>
 
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} aria-hidden />
+      <div className="absolute inset-0 -z-10 animated-gradient mix-blend-screen opacity-70" aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
@@ -125,7 +126,8 @@ export function Hero() {
             className="group h-14 px-8 text-base font-semibold tracking-tight
                        bg-[image:var(--gradient-cta)] text-primary-foreground
                        shadow-[0_10px_40px_-10px] shadow-primary/70
-                       transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_18px_60px_-10px] hover:shadow-primary/80"
+                       transition-all duration-300 hover:scale-[1.05]
+                       hover:shadow-[0_20px_70px_-8px] hover:shadow-primary"
           >
             <a href="#contact">
               Request a Pilot
@@ -137,7 +139,8 @@ export function Hero() {
             size="lg"
             variant="outline"
             className="h-14 px-8 text-base border-border/80 bg-surface/40 hover:bg-surface backdrop-blur-xl
-                       transition-all duration-300 hover:scale-[1.05] hover:border-primary/50"
+                       transition-all duration-300 hover:scale-[1.05] hover:border-primary/60
+                       hover:shadow-[0_18px_50px_-12px] hover:shadow-primary/40"
           >
             <a href="#how">See How It Works</a>
           </Button>
