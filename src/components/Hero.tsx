@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LightOrbs } from "./LightOrbs";
-import logo from "@/assets/prepeak-logo.png";
+import logo from "@/assets/logo-new.png";
 import serverRoom from "@/assets/server-room-hero.jpg";
 
 export function Hero() {
@@ -86,7 +86,7 @@ export function Hero() {
           <motion.img
             src={logo}
             alt="PrePeak"
-            className="h-40 md:h-56 lg:h-64 w-auto drop-shadow-[0_0_60px_oklch(0.82_0.21_142_/_0.6)]"
+            className="h-40 md:h-56 lg:h-64 w-auto drop-shadow-[0_0_60px_oklch(0.82_0.21_142_/_0.6)] border-slate-200"
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
