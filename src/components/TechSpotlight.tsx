@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Target, Clock, Gauge, ShieldCheck, FileText, Cpu } from "lucide-react";
+import { CountUp } from "./CountUp";
 
 const stats = [
-  { v: "98%", k: "Prediction Accuracy", icon: Target },
-  { v: "1000ms", k: "Detection Lead Time", icon: Clock },
-  { v: "<1s", k: "Response Before Spike", icon: Gauge },
-  { v: "30%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
+  { to: 98, suffix: "%", k: "Prediction Accuracy", icon: Target },
+  { to: 1000, suffix: "ms", k: "Detection Lead Time", icon: Clock },
+  { to: 1, prefix: "<", suffix: "s", k: "Response Before Spike", icon: Gauge },
+  { to: 30, suffix: "%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
 ];
 
 const customers = [
