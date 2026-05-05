@@ -6,7 +6,6 @@ export function Footer() {
     <footer className="border-t border-border/40 py-12">
       <div className="mx-auto max-w-7xl px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="flex items-center gap-2">
-          <img src={logo} alt="PrePeak" className="h-8 w-auto" />
           <span className="font-semibold tracking-tight">
             PrePeak<span className="text-primary">.ai</span>
           </span>
