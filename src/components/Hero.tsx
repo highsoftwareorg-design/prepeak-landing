@@ -41,6 +41,35 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 mix-blend-screen opacity-60">
         <LightOrbs density="subtle" />
       </div>
+
+      {/* Floating animated blobs (gel/blob effect) */}
+      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden>
+        <span
+          className="blob"
+          style={{
+            top: "-10%", left: "-8%", width: 520, height: 520,
+            background: "radial-gradient(circle, oklch(0.82 0.21 142 / 0.45), transparent 70%)",
+            animationDelay: "0s",
+          }}
+        />
+        <span
+          className="blob"
+          style={{
+            top: "20%", right: "-10%", width: 460, height: 460,
+            background: "radial-gradient(circle, oklch(0.62 0.2 155 / 0.4), transparent 70%)",
+            animationDelay: "-6s",
+          }}
+        />
+        <span
+          className="blob"
+          style={{
+            bottom: "-15%", left: "30%", width: 600, height: 600,
+            background: "radial-gradient(circle, oklch(0.86 0.2 140 / 0.3), transparent 70%)",
+            animationDelay: "-12s",
+          }}
+        />
+      </div>
+
       <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
@@ -86,15 +115,28 @@ export function Hero() {
 
         <motion.div
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
+          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button asChild size="lg" className="group bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_40px_-10px] shadow-primary/60">
+          <Button
+            asChild
+            size="lg"
+            className="group h-14 px-8 text-base font-semibold tracking-tight
+                       bg-[image:var(--gradient-cta)] text-primary-foreground
+                       shadow-[0_10px_40px_-10px] shadow-primary/70
+                       transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_18px_60px_-10px] hover:shadow-primary/80"
+          >
             <a href="#contact">
               Request a Pilot
-              <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-border bg-surface/40 hover:bg-surface backdrop-blur">
+          <Button
+            asChild
+            size="lg"
+            variant="outline"
+            className="h-14 px-8 text-base border-border/80 bg-surface/40 hover:bg-surface backdrop-blur-xl
+                       transition-all duration-300 hover:scale-[1.05] hover:border-primary/50"
+          >
             <a href="#how">See How It Works</a>
           </Button>
         </motion.div>
