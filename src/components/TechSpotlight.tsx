@@ -58,7 +58,9 @@ export function TechSpotlight() {
               <div className="rounded-xl border border-border/60 bg-background/40 p-6">
                 <p className="text-xs font-mono text-muted-foreground">EXISTING SOLUTION</p>
                 <p className="mt-2 text-sm text-muted-foreground">High-Rate Lithium-Ion · 6 cabinets · 9 tons</p>
-                <p className="mt-6 text-4xl font-semibold text-foreground/70">$2.2M</p>
+                <p className="mt-6 text-4xl font-semibold text-foreground/70">
+                  <CountUp to={2.2} decimals={1} prefix="$" suffix="M" duration={1.8} />
+                </p>
                 <p className="mt-1 text-xs text-muted-foreground">4 full replacements over 20 years</p>
               </div>
               <div className="rounded-xl border border-primary/40 bg-primary/5 p-6 ring-1 ring-primary/20">
