@@ -121,14 +121,20 @@ export function TechSpotlight() {
 
               <dl className="mt-10 space-y-4">
                 {[
-                  { k: "$42B", v: "TAM — Global Data Center Market" },
-                  { k: "$25B", v: "SAM — AI & Hyperscale Power" },
-                  { k: "$1.5B", v: "SOM — Early AI Data Centers" },
-                ].map((s) => (
-                  <div key={s.v} className="flex items-baseline gap-4 border-b border-border/40 pb-3">
-                    <dt className="text-3xl font-semibold text-gradient w-28">{s.k}</dt>
+                  { to: 42, decimals: 0, suffix: "B", v: "TAM — Global Data Center Market" },
+                  { to: 25, decimals: 0, suffix: "B", v: "SAM — AI & Hyperscale Power" },
+                  { to: 1.5, decimals: 1, suffix: "B", v: "SOM — Early AI Data Centers" },
+                ].map((s, i) => (
+                  <motion.div key={s.v}
+                    initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.12 }}
+                    className="flex items-baseline gap-4 border-b border-border/40 pb-3"
+                  >
+                    <dt className="text-3xl font-semibold text-gradient w-28">
+                      <CountUp to={s.to} decimals={s.decimals} prefix="$" suffix={s.suffix} duration={1.6} />
+                    </dt>
                     <dd className="text-sm text-muted-foreground">{s.v}</dd>
-                  </div>
+                  </motion.div>
                 ))}
               </dl>
             </motion.div>
