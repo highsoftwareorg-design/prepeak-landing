@@ -1,5 +1,4 @@
 import { Linkedin, Twitter } from "lucide-react";
-import logo from "@/assets/prepeak-logo.png";
 
 export function Footer() {
   return (
