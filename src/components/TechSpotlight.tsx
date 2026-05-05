@@ -144,8 +144,20 @@ export function TechSpotlight() {
               whileInView="show"
               viewport={{ once: true, margin: "-100px" }}
               variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
-              className="grid grid-cols-2 gap-4"
+              className="flex flex-col gap-4"
             >
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 16 },
+                  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+                }}
+              >
+                <p className="text-xs font-mono uppercase tracking-widest text-primary">Target Customers &</p>
+                <h3 className="mt-2 text-2xl md:text-3xl font-semibold tracking-tight">
+                  Beachhead <span className="text-gradient-accent">Market</span>
+                </h3>
+              </motion.div>
+              <div className="grid grid-cols-2 gap-4">
               {customers.map((c) => (
                 <motion.div
                   key={c.group}
