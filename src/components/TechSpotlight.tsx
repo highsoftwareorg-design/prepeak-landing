@@ -175,6 +175,7 @@ export function TechSpotlight() {
                   </ul>
                 </motion.div>
               ))}
+              </div>
             </motion.div>
           </div>
         </div>
