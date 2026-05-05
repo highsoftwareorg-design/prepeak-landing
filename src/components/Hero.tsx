@@ -15,7 +15,7 @@ export function Hero() {
           alt=""
           loading="eager"
           decoding="async"
-          className="h-full w-full object-cover object-center opacity-40 brightness-[0.45] saturate-[0.35] hue-rotate-[-10deg]"
+          className="h-full w-full object-cover object-center opacity-100 brightness-[0.95] saturate-[0.6]"
           width={1920}
           height={1080}
         />
@@ -35,9 +35,9 @@ export function Hero() {
         <ServerLeds />
 
         {/* Soft overlays for legibility while keeping the room visible */}
-        <div className="absolute inset-0 bg-background/75" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-background to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-background via-background/80 to-transparent" />
+        <div className="absolute inset-0 bg-background/15" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/80 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background via-background/70 to-transparent" />
       </div>
 
       <div className="absolute inset-0 -z-10 mix-blend-screen opacity-60">
