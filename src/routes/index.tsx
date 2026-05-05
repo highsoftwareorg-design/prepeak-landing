@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
@@ -8,6 +9,8 @@ import { Competitors } from "@/components/Competitors";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
+import { SectionDivider } from "@/components/SectionDivider";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -23,18 +26,31 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+      className="min-h-screen bg-background text-foreground"
+    >
       <Navbar />
       <main>
         <Hero />
+        <SectionDivider />
         <Services />
+        <SectionDivider flip />
         <ProcessTimeline />
+        <SectionDivider />
         <TechSpotlight />
+        <SectionDivider flip />
         <Competitors />
+        <SectionDivider />
         <Team />
+        <SectionDivider flip />
         <Contact />
       </main>
       <Footer />
-    </div>
+      <ScrollToTop />
+    </motion.div>
   );
 }
