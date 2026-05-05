@@ -47,10 +47,10 @@ export function Services() {
           {impacts.map((s, i) => (
             <motion.div key={s.title}
               initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: i * 0.12 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
             >
               <TiltCard className="h-full rounded-2xl">
-                <div className="group relative h-full rounded-2xl border border-border bg-surface/50 p-8 backdrop-blur-xl overflow-hidden transition-colors hover:border-primary/50">
+                <div className="group relative h-full glass lift rounded-2xl p-8 overflow-hidden hover:border-primary/50">
                   <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
                   <div className="relative">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 ring-1 ring-primary/30">

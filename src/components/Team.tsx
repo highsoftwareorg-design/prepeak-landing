@@ -36,12 +36,12 @@ export function Team() {
           {team.map((m, i) => (
             <motion.div key={m.name}
               initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-xl transition-all hover:border-primary/40"
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+              className="group relative glass lift rounded-2xl p-8 hover:border-primary/50"
             >
               <div className="flex items-start gap-5">
                 <div className="relative h-20 w-20 shrink-0 rounded-2xl ring-1 ring-primary/40 bg-gradient-to-br from-primary/30 to-blue-glow/20 overflow-hidden">
-                  <img src={m.image} alt={m.name} className="h-full w-full object-cover" />
+                  <img src={m.image} alt={m.name} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute -inset-1 rounded-2xl bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" aria-hidden />
                 </div>
                 <div className="flex-1">
@@ -49,7 +49,7 @@ export function Team() {
                   <p className="text-sm text-primary font-mono">{m.role}</p>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
                   <div className="mt-5 flex items-center gap-3">
-                    <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                    <a href="#" className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 inline-block">
                       <Linkedin className="h-4 w-4" />
                     </a>
                   </div>
@@ -71,8 +71,8 @@ export function Team() {
             ].map((r, i) => (
               <motion.div key={r.y}
                 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="rounded-xl border border-border bg-surface/40 p-5 backdrop-blur-xl"
+                viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="glass lift rounded-2xl p-5 hover:border-primary/40"
               >
                 <p className="font-mono text-2xl font-semibold text-gradient-accent">{r.y}</p>
                 <p className="mt-2 text-sm text-muted-foreground">{r.t}</p>
