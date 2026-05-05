@@ -43,14 +43,26 @@ export function Services() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-3">
-          {impacts.map((s, i) => (
-            <motion.div key={s.title}
-              initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
+        <motion.div
+          className="mt-16 grid gap-6 md:grid-cols-3"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-80px" }}
+          variants={{
+            hidden: {},
+            show: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
+          }}
+        >
+          {impacts.map((s) => (
+            <motion.div
+              key={s.title}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+              }}
             >
               <TiltCard className="h-full rounded-2xl">
-                <div className="group relative h-full glass lift rounded-2xl p-8 overflow-hidden hover:border-primary/50">
+                <div className="group relative h-full glass lift-shine rounded-2xl p-8 hover:border-primary/50">
                   <div className="absolute -top-20 -right-20 h-40 w-40 rounded-full bg-primary/15 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden />
                   <div className="relative">
                     <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary/25 to-primary/5 ring-1 ring-primary/30">
@@ -72,7 +84,7 @@ export function Services() {
               </TiltCard>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
