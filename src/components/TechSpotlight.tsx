@@ -66,7 +66,9 @@ export function TechSpotlight() {
               <div className="rounded-xl border border-primary/40 bg-primary/5 p-6 ring-1 ring-primary/20">
                 <p className="text-xs font-mono text-primary">PREPEAK</p>
                 <p className="mt-2 text-sm text-muted-foreground">AI-Driven Supercapacitor · 660 kg · plug-and-play</p>
-                <p className="mt-6 text-4xl font-semibold text-gradient-accent">$150K</p>
+                <p className="mt-6 text-4xl font-semibold text-gradient-accent">
+                  <CountUp to={150} prefix="$" suffix="K" duration={1.8} />
+                </p>
                 <p className="mt-1 text-xs text-muted-foreground">0 replacements · 20-year lifespan</p>
               </div>
             </div>
