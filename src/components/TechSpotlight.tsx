@@ -36,7 +36,7 @@ export function TechSpotlight() {
               <motion.div key={s.k}
                 initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+                className="glass lift rounded-2xl p-6 hover:border-primary/40"
               >
                 <s.icon className="h-5 w-5 text-primary" strokeWidth={1.8} />
                 <p className="mt-6 text-4xl font-semibold tracking-tight text-gradient">
