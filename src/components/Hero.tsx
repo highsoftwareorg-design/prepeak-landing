@@ -13,6 +13,8 @@ export function Hero() {
         <img
           src={serverRoom}
           alt=""
+          loading="eager"
+          decoding="async"
           className="h-full w-full object-cover object-center opacity-90"
           width={1920}
           height={1080}

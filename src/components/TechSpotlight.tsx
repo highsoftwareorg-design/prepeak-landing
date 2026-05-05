@@ -140,19 +140,28 @@ export function TechSpotlight() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, delay: 0.1 }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
               className="grid grid-cols-2 gap-4"
             >
               {customers.map((c) => (
-                <div key={c.group} className="rounded-xl border border-border bg-surface/40 p-5 backdrop-blur-xl">
+                <motion.div
+                  key={c.group}
+                  variants={{
+                    hidden: { opacity: 0, y: 24 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+                  }}
+                  className="glass lift rounded-2xl p-5 hover:border-primary/40"
+                >
                   <p className="text-xs font-mono uppercase text-primary">{c.group}</p>
                   <ul className="mt-3 space-y-1.5">
                     {c.names.map((n) => (
                       <li key={n} className="text-sm text-foreground/85">{n}</li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
