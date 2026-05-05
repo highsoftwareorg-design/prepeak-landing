@@ -79,7 +79,9 @@
   --gradient-accent: linear-gradient(135deg, oklch(0.86 0.2 140), oklch(0.6 0.22 150));
   --gradient-text: linear-gradient(135deg, oklch(0.98 0 0), oklch(0.82 0.18 142));
   --shadow-glow: 0 0 80px -10px oklch(0.82 0.21 142 / 0.5);
-  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 20px 40px -20px oklch(0 0 0 / 0.6);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.05) inset, 0 14px 30px -16px oklch(0 0 0 / 0.55);
+  --shadow-elevated: 0 1px 0 0 oklch(1 0 0 / 0.06) inset, 0 30px 60px -22px oklch(0 0 0 / 0.7), 0 0 0 1px oklch(0.82 0.21 142 / 0.12);
+  --gradient-cta: linear-gradient(135deg, oklch(0.86 0.2 140), oklch(0.62 0.22 152));
 }
 
 @layer base {
@@ -124,6 +126,78 @@
   }
 
   .glow-cyan { box-shadow: var(--shadow-glow); }
+
+  /* Glassmorphism card — soft, blurred, layered */
+  .glass {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-surface) 70%, transparent),
+      color-mix(in oklab, var(--color-surface) 45%, transparent)
+    );
+    backdrop-filter: blur(18px) saturate(1.1);
+    -webkit-backdrop-filter: blur(18px) saturate(1.1);
+    border: 1px solid color-mix(in oklab, var(--color-border) 100%, transparent);
+    box-shadow: var(--shadow-card);
+  }
+
+  .glass-strong {
+    background: linear-gradient(
+      180deg,
+      color-mix(in oklab, var(--color-surface-elevated) 80%, transparent),
+      color-mix(in oklab, var(--color-surface) 55%, transparent)
+    );
+    backdrop-filter: blur(24px) saturate(1.15);
+    -webkit-backdrop-filter: blur(24px) saturate(1.15);
+    border: 1px solid color-mix(in oklab, var(--color-border) 100%, transparent);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Hover lift for interactive cards */
+  .lift {
+    transition:
+      transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 350ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 250ms ease;
+  }
+  .lift:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Floating blobs background for hero */
+  @keyframes blob-drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -30px) scale(1.1); }
+    66% { transform: translate(-30px, 25px) scale(0.95); }
+  }
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.5;
+    will-change: transform;
+    animation: blob-drift 18s ease-in-out infinite;
+  }
+
+  /* Smooth scroll */
+  html { scroll-behavior: smooth; }
+
+  /* Skeleton shimmer */
+  @keyframes shimmer {
+    0% { background-position: -800px 0; }
+    100% { background-position: 800px 0; }
+  }
+  .skeleton {
+    background: linear-gradient(
+      90deg,
+      color-mix(in oklab, var(--color-surface) 70%, transparent) 0%,
+      color-mix(in oklab, var(--color-surface-elevated) 95%, transparent) 50%,
+      color-mix(in oklab, var(--color-surface) 70%, transparent) 100%
+    );
+    background-size: 1600px 100%;
+    animation: shimmer 1.6s linear infinite;
+    border-radius: 0.75rem;
+  }
 }
 
 @font-face {

@@ -27,10 +27,10 @@ export function ProcessTimeline() {
           {phases.map((p, i) => (
             <motion.div key={p.n}
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1 }}
+              viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
               className="relative group"
             >
-              <div className="relative rounded-xl border border-border bg-surface/40 p-6 backdrop-blur-xl transition-all hover:border-primary/40 hover:bg-surface/70 h-full">
+              <div className="relative glass lift rounded-2xl p-6 hover:border-primary/40 h-full">
                 <div className="flex items-center justify-between">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 ring-1 ring-primary/30">
                     <p.icon className="h-5 w-5 text-primary" strokeWidth={2} />

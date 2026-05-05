@@ -35,7 +35,7 @@ export function Contact() {
 
           <form
             onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-            className="rounded-2xl border border-border bg-surface/60 p-6 backdrop-blur-xl shadow-[var(--shadow-card)] space-y-4"
+            className="glass-strong rounded-2xl p-6 space-y-4"
           >
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -55,7 +55,13 @@ export function Contact() {
               <label className="text-xs text-muted-foreground font-mono">TELL US ABOUT YOUR INFRASTRUCTURE</label>
               <Textarea required rows={4} placeholder="MW capacity, GPU fleet, current pain points..." className="mt-1.5 bg-background/40 border-border resize-none" />
             </div>
-            <Button type="submit" size="lg" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button
+              type="submit"
+              size="lg"
+              className="w-full h-12 text-base font-semibold bg-[image:var(--gradient-cta)] text-primary-foreground
+                         shadow-[0_8px_30px_-8px] shadow-primary/60
+                         transition-transform hover:scale-[1.02]"
+            >
               {sent ? "Message sent ✓" : "Request a Pilot"}
             </Button>
           </form>

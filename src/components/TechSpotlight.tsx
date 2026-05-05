@@ -36,7 +36,7 @@ export function TechSpotlight() {
               <motion.div key={s.k}
                 initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+                className="glass lift rounded-2xl p-6 hover:border-primary/40"
               >
                 <s.icon className="h-5 w-5 text-primary" strokeWidth={1.8} />
                 <p className="mt-6 text-4xl font-semibold tracking-tight text-gradient">
@@ -50,12 +50,12 @@ export function TechSpotlight() {
           {/* Cost comparison */}
           <motion.div
             initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6 }}
-            className="mt-16 rounded-2xl border border-border bg-surface/40 p-8 backdrop-blur-xl"
+            viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-16 glass-strong rounded-2xl p-8"
           >
             <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground">Solving a 1 MW Power Spike — Total 20-Year Cost</p>
             <div className="mt-6 grid md:grid-cols-2 gap-6">
-              <div className="rounded-xl border border-border/60 bg-background/40 p-6">
+              <div className="glass lift rounded-2xl p-6">
                 <p className="text-xs font-mono text-muted-foreground">EXISTING SOLUTION</p>
                 <p className="mt-2 text-sm text-muted-foreground">High-Rate Lithium-Ion · 6 cabinets · 9 tons</p>
                 <p className="mt-6 text-4xl font-semibold text-foreground/70">
@@ -63,7 +63,7 @@ export function TechSpotlight() {
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground">4 full replacements over 20 years</p>
               </div>
-              <div className="rounded-xl border border-primary/40 bg-primary/5 p-6 ring-1 ring-primary/20">
+              <div className="lift rounded-2xl border border-primary/40 bg-primary/5 p-6 ring-1 ring-primary/20 backdrop-blur-xl">
                 <p className="text-xs font-mono text-primary">PREPEAK</p>
                 <p className="mt-2 text-sm text-muted-foreground">AI-Driven Supercapacitor · 660 kg · plug-and-play</p>
                 <p className="mt-6 text-4xl font-semibold text-gradient-accent">
@@ -78,8 +78,8 @@ export function TechSpotlight() {
           <div className="mt-10 grid md:grid-cols-2 gap-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6 }}
-              className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+              viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="glass lift rounded-2xl p-6 hover:border-primary/40"
             >
               <FileText className="h-5 w-5 text-primary" />
               <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">Patent</p>
@@ -90,8 +90,8 @@ export function TechSpotlight() {
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
-              className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
+              viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              className="glass lift rounded-2xl p-6 hover:border-primary/40"
             >
               <Cpu className="h-5 w-5 text-primary" />
               <p className="mt-4 font-mono text-xs uppercase text-muted-foreground">Technology</p>
@@ -140,19 +140,28 @@ export function TechSpotlight() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, delay: 0.1 }}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1, delayChildren: 0.2 } } }}
               className="grid grid-cols-2 gap-4"
             >
               {customers.map((c) => (
-                <div key={c.group} className="rounded-xl border border-border bg-surface/40 p-5 backdrop-blur-xl">
+                <motion.div
+                  key={c.group}
+                  variants={{
+                    hidden: { opacity: 0, y: 24 },
+                    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
+                  }}
+                  className="glass lift rounded-2xl p-5 hover:border-primary/40"
+                >
                   <p className="text-xs font-mono uppercase text-primary">{c.group}</p>
                   <ul className="mt-3 space-y-1.5">
                     {c.names.map((n) => (
                       <li key={n} className="text-sm text-foreground/85">{n}</li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
