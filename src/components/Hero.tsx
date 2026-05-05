@@ -167,6 +167,59 @@ export function Hero() {
   );
 }
 
+function Heartbeat() {
+  // ECG-style waveform: flat baseline, P wave, QRS spike, T wave, flat
+  const d =
+    "M0,20 L18,20 L22,18 L26,22 L30,20 L40,20 L43,12 L46,30 L49,4 L52,32 L55,18 L58,20 L70,20 L74,16 L80,22 L84,20 L100,20";
+
+  return (
+    <div className="relative h-12 w-full overflow-hidden rounded-lg border border-primary/20 bg-surface/30 backdrop-blur-sm px-3 py-1">
+      <div className="absolute inset-0 bg-grid-fine opacity-20" aria-hidden />
+      <svg viewBox="0 0 100 40" preserveAspectRatio="none" className="relative h-full w-full">
+        <defs>
+          <linearGradient id="ecgFade" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="oklch(0.86 0.2 142)" stopOpacity="0" />
+            <stop offset="20%" stopColor="oklch(0.86 0.2 142)" stopOpacity="1" />
+            <stop offset="80%" stopColor="oklch(0.86 0.2 142)" stopOpacity="1" />
+            <stop offset="100%" stopColor="oklch(0.86 0.2 142)" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        {/* Faint baseline (full path) */}
+        <path
+          d={d}
+          fill="none"
+          stroke="oklch(0.82 0.21 142 / 0.18)"
+          strokeWidth="0.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+
+        {/* Animated drawing pulse */}
+        <motion.path
+          d={d}
+          fill="none"
+          stroke="url(#ecgFade)"
+          strokeWidth="1.1"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{
+            filter: "drop-shadow(0 0 4px oklch(0.86 0.2 142 / 0.9))",
+          }}
+          initial={{ pathLength: 0, pathOffset: 0 }}
+          animate={{ pathLength: [0, 1, 1], pathOffset: [0, 0, 1] }}
+          transition={{
+            duration: 2,
+            times: [0, 0.7, 1],
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+      </svg>
+    </div>
+  );
+}
+
 function ServerLeds() {
   // Hand-placed positions roughly aligned to server racks; deterministic so SSR matches
   const leds = [
