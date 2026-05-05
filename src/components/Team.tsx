@@ -59,27 +59,6 @@ export function Team() {
           ))}
         </div>
 
-        {/* Roadmap */}
-        <div className="mt-20">
-          <p className="text-center text-xs font-mono uppercase tracking-widest text-primary">Roadmap</p>
-          <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { y: "2025", t: "Patent & MVP" },
-              { y: "2026", t: "R&D + PoC with strategic partners" },
-              { y: "2027", t: "First commercial customer" },
-              { y: "2028", t: "Integrator partnerships" },
-            ].map((r, i) => (
-              <motion.div key={r.y}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="glass lift rounded-2xl p-5 hover:border-primary/40"
-              >
-                <p className="font-mono text-2xl font-semibold text-gradient-accent">{r.y}</p>
-                <p className="mt-2 text-sm text-muted-foreground">{r.t}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
