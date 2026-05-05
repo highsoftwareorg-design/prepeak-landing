@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
 import { Target, Clock, Gauge, ShieldCheck, FileText, Cpu } from "lucide-react";
+import { CountUp } from "./CountUp";
 
 const stats = [
-  { v: "98%", k: "Prediction Accuracy", icon: Target },
-  { v: "1000ms", k: "Detection Lead Time", icon: Clock },
-  { v: "<1s", k: "Response Before Spike", icon: Gauge },
-  { v: "30%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
+  { to: 98, suffix: "%", k: "Prediction Accuracy", icon: Target },
+  { to: 1000, suffix: "ms", k: "Detection Lead Time", icon: Clock },
+  { to: 1, prefix: "<", suffix: "s", k: "Response Before Spike", icon: Gauge },
+  { to: 30, suffix: "%", k: "Stranded Capacity Unlocked", icon: ShieldCheck },
 ];
 
 const customers = [
@@ -33,12 +34,14 @@ export function TechSpotlight() {
           <div className="mt-16 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {stats.map((s, i) => (
               <motion.div key={s.k}
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.5, delay: i * 0.08 }}
+                initial={{ opacity: 0, y: 40, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="rounded-2xl border border-border bg-surface/40 p-6 backdrop-blur-xl"
               >
                 <s.icon className="h-5 w-5 text-primary" strokeWidth={1.8} />
-                <p className="mt-6 text-4xl font-semibold tracking-tight text-gradient">{s.v}</p>
+                <p className="mt-6 text-4xl font-semibold tracking-tight text-gradient">
+                  <CountUp to={s.to} prefix={s.prefix ?? ""} suffix={s.suffix} duration={1.8} />
+                </p>
                 <p className="mt-2 text-sm text-muted-foreground">{s.k}</p>
               </motion.div>
             ))}
@@ -55,13 +58,17 @@ export function TechSpotlight() {
               <div className="rounded-xl border border-border/60 bg-background/40 p-6">
                 <p className="text-xs font-mono text-muted-foreground">EXISTING SOLUTION</p>
                 <p className="mt-2 text-sm text-muted-foreground">High-Rate Lithium-Ion · 6 cabinets · 9 tons</p>
-                <p className="mt-6 text-4xl font-semibold text-foreground/70">$2.2M</p>
+                <p className="mt-6 text-4xl font-semibold text-foreground/70">
+                  <CountUp to={2.2} decimals={1} prefix="$" suffix="M" duration={1.8} />
+                </p>
                 <p className="mt-1 text-xs text-muted-foreground">4 full replacements over 20 years</p>
               </div>
               <div className="rounded-xl border border-primary/40 bg-primary/5 p-6 ring-1 ring-primary/20">
                 <p className="text-xs font-mono text-primary">PREPEAK</p>
                 <p className="mt-2 text-sm text-muted-foreground">AI-Driven Supercapacitor · 660 kg · plug-and-play</p>
-                <p className="mt-6 text-4xl font-semibold text-gradient-accent">$150K</p>
+                <p className="mt-6 text-4xl font-semibold text-gradient-accent">
+                  <CountUp to={150} prefix="$" suffix="K" duration={1.8} />
+                </p>
                 <p className="mt-1 text-xs text-muted-foreground">0 replacements · 20-year lifespan</p>
               </div>
             </div>
@@ -114,14 +121,20 @@ export function TechSpotlight() {
 
               <dl className="mt-10 space-y-4">
                 {[
-                  { k: "$42B", v: "TAM — Global Data Center Market" },
-                  { k: "$25B", v: "SAM — AI & Hyperscale Power" },
-                  { k: "$1.5B", v: "SOM — Early AI Data Centers" },
-                ].map((s) => (
-                  <div key={s.v} className="flex items-baseline gap-4 border-b border-border/40 pb-3">
-                    <dt className="text-3xl font-semibold text-gradient w-28">{s.k}</dt>
+                  { to: 42, decimals: 0, suffix: "B", v: "TAM — Global Data Center Market" },
+                  { to: 25, decimals: 0, suffix: "B", v: "SAM — AI & Hyperscale Power" },
+                  { to: 1.5, decimals: 1, suffix: "B", v: "SOM — Early AI Data Centers" },
+                ].map((s, i) => (
+                  <motion.div key={s.v}
+                    initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-60px" }} transition={{ duration: 0.5, delay: i * 0.12 }}
+                    className="flex items-baseline gap-4 border-b border-border/40 pb-3"
+                  >
+                    <dt className="text-3xl font-semibold text-gradient w-28">
+                      <CountUp to={s.to} decimals={s.decimals} prefix="$" suffix={s.suffix} duration={1.6} />
+                    </dt>
                     <dd className="text-sm text-muted-foreground">{s.v}</dd>
-                  </div>
+                  </motion.div>
                 ))}
               </dl>
             </motion.div>
