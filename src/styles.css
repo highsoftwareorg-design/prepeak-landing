@@ -179,6 +179,50 @@
     animation: blob-drift 18s ease-in-out infinite;
   }
 
+  /* Animated gradient backdrop for hero */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .animated-gradient {
+    background: linear-gradient(
+      120deg,
+      oklch(0.82 0.21 142 / 0.18),
+      oklch(0.62 0.2 155 / 0.16),
+      oklch(0.86 0.2 140 / 0.20),
+      oklch(0.6 0.22 150 / 0.14)
+    );
+    background-size: 300% 300%;
+    animation: gradient-shift 18s ease infinite;
+  }
+
+  /* Card hover: lift + animated sheen (glassmorphism shine) */
+  .lift-shine { position: relative; overflow: hidden; }
+  .lift-shine::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(
+      115deg,
+      transparent 30%,
+      color-mix(in oklab, var(--color-primary) 22%, transparent) 50%,
+      transparent 70%
+    );
+    transform: translateX(-120%);
+    transition: transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+  }
+  .lift-shine:hover::before { transform: translateX(120%); }
+  .lift-shine:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-elevated), 0 0 40px -10px color-mix(in oklab, var(--color-primary) 40%, transparent);
+  }
+  .lift-shine {
+    transition:
+      transform 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 250ms ease;
+  }
+
   /* Smooth scroll */
   html { scroll-behavior: smooth; }
 
