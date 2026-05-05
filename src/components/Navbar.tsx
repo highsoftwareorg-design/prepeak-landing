@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/prepeak-logo.png";
+import logo from "@/assets/navbar-logo.png";
 
 const links = [
   { label: "The Problem", href: "#problem" },
@@ -41,7 +41,7 @@ export function Navbar() {
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
           />
           <span className="font-semibold tracking-tight text-foreground -ml-1">
-            PrePeak<span className="text-primary">.ai</span>
+            {"\n"}
           </span>
         </Link>
 
