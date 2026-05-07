@@ -49,7 +49,10 @@ export function Hero() {
         <span
           className="blob"
           style={{
-            top: "-10%", left: "-8%", width: 520, height: 520,
+            top: "-10%",
+            left: "-8%",
+            width: 520,
+            height: 520,
             background: "radial-gradient(circle, oklch(0.82 0.21 142 / 0.45), transparent 70%)",
             animationDelay: "0s",
           }}
@@ -57,7 +60,10 @@ export function Hero() {
         <span
           className="blob"
           style={{
-            top: "20%", right: "-10%", width: 460, height: 460,
+            top: "20%",
+            right: "-10%",
+            width: 460,
+            height: 460,
             background: "radial-gradient(circle, oklch(0.62 0.2 155 / 0.4), transparent 70%)",
             animationDelay: "-6s",
           }}
@@ -65,15 +71,25 @@ export function Hero() {
         <span
           className="blob"
           style={{
-            bottom: "-15%", left: "30%", width: 600, height: 600,
+            bottom: "-15%",
+            left: "30%",
+            width: 600,
+            height: 600,
             background: "radial-gradient(circle, oklch(0.86 0.2 140 / 0.3), transparent 70%)",
             animationDelay: "-12s",
           }}
         />
       </div>
 
-      <div className="absolute inset-0 -z-10" style={{ background: "var(--gradient-hero)" }} aria-hidden />
-      <div className="absolute inset-0 -z-10 animated-gradient mix-blend-screen opacity-70" aria-hidden />
+      <div
+        className="absolute inset-0 -z-10"
+        style={{ background: "var(--gradient-hero)" }}
+        aria-hidden
+      />
+      <div
+        className="absolute inset-0 -z-10 animated-gradient mix-blend-screen opacity-70"
+        aria-hidden
+      />
 
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
@@ -103,7 +119,9 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.6 }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-mono text-primary backdrop-blur"
         >
           <Zap className="h-3 w-3" />
@@ -111,7 +129,9 @@ export function Hero() {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.7 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-6 text-balance text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]"
         >
           AI-Powered Power Stability for{" "}
@@ -119,15 +139,20 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.85 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.85 }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground"
         >
-          We predict GPU power spikes <strong className="text-foreground">1000ms before they occur</strong> —
-          preventing downtime, protecting equipment, and unlocking up to 30% of stranded power capacity.
+          We predict GPU power spikes{" "}
+          <strong className="text-foreground">1000ms before they occur</strong> — preventing
+          downtime, protecting equipment, and unlocking up to 30% of stranded power capacity.
         </motion.p>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button
@@ -157,7 +182,9 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 1.2 }}
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1.2 }}
           className="relative mx-auto mt-16 max-w-3xl"
         >
           <SpikeWaveform />
@@ -223,16 +250,26 @@ function Heartbeat() {
 function ServerLeds() {
   // Hand-placed positions roughly aligned to server racks; deterministic so SSR matches
   const leds = [
-    { x: 8, y: 38, d: 1.6, h: 142 }, { x: 8, y: 46, d: 2.2, h: 142 },
-    { x: 8, y: 54, d: 1.9, h: 150 }, { x: 8, y: 62, d: 2.6, h: 142 },
-    { x: 18, y: 36, d: 1.8, h: 142 }, { x: 18, y: 48, d: 2.4, h: 150 },
-    { x: 18, y: 60, d: 2.0, h: 142 }, { x: 28, y: 40, d: 2.2, h: 142 },
-    { x: 28, y: 52, d: 1.7, h: 150 }, { x: 28, y: 64, d: 2.5, h: 142 },
-    { x: 72, y: 38, d: 2.1, h: 142 }, { x: 72, y: 50, d: 1.9, h: 142 },
-    { x: 72, y: 62, d: 2.3, h: 150 }, { x: 82, y: 40, d: 1.8, h: 142 },
-    { x: 82, y: 52, d: 2.6, h: 142 }, { x: 82, y: 64, d: 2.0, h: 150 },
-    { x: 92, y: 42, d: 2.2, h: 142 }, { x: 92, y: 56, d: 1.7, h: 142 },
-    { x: 48, y: 30, d: 1.5, h: 142 }, { x: 52, y: 32, d: 1.5, h: 150 },
+    { x: 8, y: 38, d: 1.6, h: 142 },
+    { x: 8, y: 46, d: 2.2, h: 142 },
+    { x: 8, y: 54, d: 1.9, h: 150 },
+    { x: 8, y: 62, d: 2.6, h: 142 },
+    { x: 18, y: 36, d: 1.8, h: 142 },
+    { x: 18, y: 48, d: 2.4, h: 150 },
+    { x: 18, y: 60, d: 2.0, h: 142 },
+    { x: 28, y: 40, d: 2.2, h: 142 },
+    { x: 28, y: 52, d: 1.7, h: 150 },
+    { x: 28, y: 64, d: 2.5, h: 142 },
+    { x: 72, y: 38, d: 2.1, h: 142 },
+    { x: 72, y: 50, d: 1.9, h: 142 },
+    { x: 72, y: 62, d: 2.3, h: 150 },
+    { x: 82, y: 40, d: 1.8, h: 142 },
+    { x: 82, y: 52, d: 2.6, h: 142 },
+    { x: 82, y: 64, d: 2.0, h: 150 },
+    { x: 92, y: 42, d: 2.2, h: 142 },
+    { x: 92, y: 56, d: 1.7, h: 142 },
+    { x: 48, y: 30, d: 1.5, h: 142 },
+    { x: 52, y: 32, d: 1.5, h: 150 },
   ];
   return (
     <div className="absolute inset-0 pointer-events-none mix-blend-screen">
@@ -249,12 +286,22 @@ function ServerLeds() {
             boxShadow: `0 0 10px 2px oklch(0.86 0.2 ${l.h} / 0.9), 0 0 24px 6px oklch(0.82 0.21 ${l.h} / 0.5)`,
           }}
           animate={{ opacity: [0.15, 1, 0.3, 0.95, 0.2], scale: [0.9, 1.15, 1, 1.1, 0.9] }}
-          transition={{ duration: l.d + 1.6, repeat: Infinity, ease: "easeInOut", delay: (i % 7) * 0.35 }}
+          transition={{
+            duration: l.d + 1.6,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: (i % 7) * 0.35,
+          }}
         />
       ))}
 
       {/* Occasional fast blink — diagnostic LEDs */}
-      {[{ x: 14, y: 44 }, { x: 24, y: 56 }, { x: 76, y: 46 }, { x: 88, y: 58 }].map((l, i) => (
+      {[
+        { x: 14, y: 44 },
+        { x: 24, y: 56 },
+        { x: 76, y: 46 },
+        { x: 88, y: 58 },
+      ].map((l, i) => (
         <motion.span
           key={`blink-${i}`}
           className="absolute rounded-full"
@@ -276,8 +323,21 @@ function ServerLeds() {
 
 function SpikeWaveform() {
   const points = [
-    [0, 60], [8, 58], [15, 62], [22, 55], [30, 60], [38, 50], [44, 65],
-    [50, 18], [54, 70], [60, 55], [68, 60], [76, 52], [84, 58], [92, 56], [100, 60],
+    [0, 60],
+    [8, 58],
+    [15, 62],
+    [22, 55],
+    [30, 60],
+    [38, 50],
+    [44, 65],
+    [50, 18],
+    [54, 70],
+    [60, 55],
+    [68, 60],
+    [76, 52],
+    [84, 58],
+    [92, 56],
+    [100, 60],
   ];
   const path = points.map((p, i) => `${i === 0 ? "M" : "L"}${p[0]},${p[1]}`).join(" ");
 
@@ -286,7 +346,9 @@ function SpikeWaveform() {
       <div className="absolute inset-0 bg-grid-fine rounded-2xl opacity-40" aria-hidden />
       <div className="relative flex items-center justify-between text-xs font-mono text-muted-foreground mb-3">
         <span>// gpu_load.signal</span>
-        <span className="flex items-center gap-1.5"><span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> predicting</span>
+        <span className="flex items-center gap-1.5">
+          <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" /> predicting
+        </span>
       </div>
       <svg viewBox="0 0 100 80" className="relative w-full h-56" preserveAspectRatio="none">
         <defs>
@@ -301,20 +363,53 @@ function SpikeWaveform() {
           </linearGradient>
         </defs>
         <motion.path
-          d={`${path} L100,80 L0,80 Z`} fill="url(#fill)"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.5, delay: 1.8 }}
+          d={`${path} L100,80 L0,80 Z`}
+          fill="url(#fill)"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 1.8 }}
         />
         <motion.path
-          d={path} fill="none" stroke="url(#wave)" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round"
-          initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, delay: 1.6, ease: "easeInOut" }}
+          d={path}
+          fill="none"
+          stroke="url(#wave)"
+          strokeWidth="0.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 2, delay: 1.6, ease: "easeInOut" }}
         />
-        <motion.g initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 3 }} style={{ transformOrigin: "50px 18px" }}>
+        <motion.g
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.4, delay: 3 }}
+          style={{ transformOrigin: "50px 18px" }}
+        >
           <circle cx="50" cy="18" r="1.6" fill="oklch(0.86 0.2 140)" />
-          <motion.circle cx="50" cy="18" r="1.6" fill="none" stroke="oklch(0.86 0.2 140)" strokeWidth="0.3"
-            animate={{ r: [1.6, 5, 1.6], opacity: [0.9, 0, 0.9] }} transition={{ duration: 2, repeat: Infinity }} />
+          <motion.circle
+            cx="50"
+            cy="18"
+            r="1.6"
+            fill="none"
+            stroke="oklch(0.86 0.2 140)"
+            strokeWidth="0.3"
+            animate={{ r: [1.6, 5, 1.6], opacity: [0.9, 0, 0.9] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
         </motion.g>
-        <motion.line x1="50" y1="0" x2="50" y2="80" stroke="oklch(0.86 0.2 140 / 0.5)" strokeWidth="0.2" strokeDasharray="1 1"
-          initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3 }} />
+        <motion.line
+          x1="50"
+          y1="0"
+          x2="50"
+          y2="80"
+          stroke="oklch(0.86 0.2 140 / 0.5)"
+          strokeWidth="0.2"
+          strokeDasharray="1 1"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 3 }}
+        />
       </svg>
       <div className="relative mt-3 flex items-center justify-between text-[10px] font-mono text-muted-foreground">
         <span>t-1000ms</span>

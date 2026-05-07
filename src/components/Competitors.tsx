@@ -24,26 +24,36 @@ export function Competitors() {
     <section id="competitors" className="relative py-32 border-t border-border/40">
       <div className="mx-auto max-w-7xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-mono uppercase tracking-widest text-primary">Competitive Edge</p>
+          <p className="text-xs font-mono uppercase tracking-widest text-primary">
+            Competitive Edge
+          </p>
           <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
             PrePeak vs. <span className="text-gradient-accent">the rest.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            The only solution that combines predictive AI, plug-and-play deployment, and supercapacitor efficiency.
+            The only solution that combines predictive AI, plug-and-play deployment, and
+            supercapacitor efficiency.
           </p>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }} transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="mt-14 overflow-x-auto glass-strong rounded-2xl"
         >
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border/60">
-                <th className="text-left px-6 py-5 font-mono text-xs uppercase text-muted-foreground">Capability</th>
+                <th className="text-left px-6 py-5 font-mono text-xs uppercase text-muted-foreground">
+                  Capability
+                </th>
                 {competitors.map((c) => (
-                  <th key={c.name} className={`px-4 py-5 text-center text-xs font-mono uppercase ${c.highlight ? "text-primary" : "text-muted-foreground"}`}>
+                  <th
+                    key={c.name}
+                    className={`px-4 py-5 text-center text-xs font-mono uppercase ${c.highlight ? "text-primary" : "text-muted-foreground"}`}
+                  >
                     {c.name}
                   </th>
                 ))}
@@ -51,12 +61,20 @@ export function Competitors() {
             </thead>
             <tbody>
               {features.map((f, i) => (
-                <tr key={f} className="border-b border-border/30 last:border-0 hover:bg-primary/5 transition-colors">
+                <tr
+                  key={f}
+                  className="border-b border-border/30 last:border-0 hover:bg-primary/5 transition-colors"
+                >
                   <td className="px-6 py-4 text-foreground/90">{f}</td>
                   {competitors.map((c) => (
-                    <td key={c.name} className={`px-4 py-4 text-center ${c.highlight ? "bg-primary/5" : ""}`}>
+                    <td
+                      key={c.name}
+                      className={`px-4 py-4 text-center ${c.highlight ? "bg-primary/5" : ""}`}
+                    >
                       {c.scores[i] ? (
-                        <Check className={`mx-auto h-5 w-5 ${c.highlight ? "text-primary" : "text-foreground/60"}`} />
+                        <Check
+                          className={`mx-auto h-5 w-5 ${c.highlight ? "text-primary" : "text-foreground/60"}`}
+                        />
                       ) : (
                         <X className="mx-auto h-4 w-4 text-muted-foreground/40" />
                       )}

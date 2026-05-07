@@ -40,9 +40,7 @@ export function Navbar() {
             whileHover={{ rotate: -4, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
           />
-          <span className="font-semibold tracking-tight text-foreground -ml-1">
-            {"\n"}
-          </span>
+          <span className="font-semibold tracking-tight text-foreground -ml-1">{"\n"}</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">
