@@ -5,11 +5,16 @@ type Direction = "up" | "down" | "left" | "right" | "none";
 
 const offset = (d: Direction, dist: number) => {
   switch (d) {
-    case "up": return { y: dist };
-    case "down": return { y: -dist };
-    case "left": return { x: dist };
-    case "right": return { x: -dist };
-    default: return {};
+    case "up":
+      return { y: dist };
+    case "down":
+      return { y: -dist };
+    case "left":
+      return { x: dist };
+    case "right":
+      return { x: -dist };
+    default:
+      return {};
   }
 };
 

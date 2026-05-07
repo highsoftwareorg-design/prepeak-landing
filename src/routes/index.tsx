@@ -16,9 +16,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "PrePeak.ai — Predict Spikes. Protect Uptime." },
-      { name: "description", content: "PrePeak's embedded AI control layer predicts GPU power spikes 1000ms before they occur, preventing downtime and unlocking 30% of stranded power capacity in AI data centers." },
+      {
+        name: "description",
+        content:
+          "PrePeak's embedded AI control layer predicts GPU power spikes 1000ms before they occur, preventing downtime and unlocking 30% of stranded power capacity in AI data centers.",
+      },
       { property: "og:title", content: "PrePeak.ai — We act before the peak" },
-      { property: "og:description", content: "AI-powered power stability for AI data centers. From reactive to predictive power management." },
+      {
+        property: "og:description",
+        content:
+          "AI-powered power stability for AI data centers. From reactive to predictive power management.",
+      },
     ],
   }),
   component: Index,
