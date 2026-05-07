@@ -1,7 +1,6 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
-// Target Vercel instead of the default Cloudflare Workers preset.
+// Disable the Cloudflare adapter so the build output works on generic Node hosts (Vercel).
 export default defineConfig({
   cloudflare: false,
-  tanstackStart: { target: "vercel" },
 });
