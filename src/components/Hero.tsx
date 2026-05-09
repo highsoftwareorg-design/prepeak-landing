@@ -109,15 +109,6 @@ export function Hero() {
         </motion.div>
 
 
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-mono text-primary backdrop-blur"
-        >
-          <Zap className="h-3 w-3" />
-          <span>PREDICT SPIKES · PROTECT UPTIME</span>
-        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
