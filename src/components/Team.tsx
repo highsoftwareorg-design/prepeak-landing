@@ -9,12 +9,14 @@ const team = [
     role: "Founder & CEO",
     bio: "Senior Electrical Engineer with extensive experience designing large-scale, mission-critical electrical systems.",
     image: musabImg,
+    linkedin: "#",
   },
   {
     name: "Muhammad Wattad",
     role: "Co-Founder & CTO",
     bio: "Ph.D in AI & Computer Vision from the Technion. Previously at Intel, eBay, and Mobileye.",
     image: muhammadImg,
+    linkedin: "https://www.linkedin.com/in/muhammad-wattad-ph-d-30139039/",
   },
 ];
 
@@ -63,7 +65,9 @@ export function Team() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
                   <div className="mt-5 flex items-center gap-3">
                     <a
-                      href="#"
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 inline-block"
                     >
                       <Linkedin className="h-4 w-4" />
