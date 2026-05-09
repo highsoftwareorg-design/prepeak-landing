@@ -4,8 +4,6 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 import { Services } from "@/components/Services";
-import { TechSpotlight } from "@/components/TechSpotlight";
-import { Competitors } from "@/components/Competitors";
 import { Team } from "@/components/Team";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -48,10 +46,6 @@ function Index() {
         <Services />
         <SectionDivider flip />
         <ProcessTimeline />
-        <SectionDivider />
-        <TechSpotlight />
-        <SectionDivider flip />
-        <Competitors />
         <SectionDivider />
         <Team />
         <SectionDivider flip />
