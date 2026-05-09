@@ -9,12 +9,14 @@ const team = [
     role: "Founder & CEO",
     bio: "Senior Electrical Engineer with extensive experience designing large-scale, mission-critical electrical systems.",
     image: musabImg,
+    linkedin: "#",
   },
   {
     name: "Muhammad Wattad",
     role: "Co-Founder & CTO",
     bio: "Ph.D in AI & Computer Vision from the Technion. Previously at Intel, eBay, and Mobileye.",
     image: muhammadImg,
+    linkedin: "https://www.linkedin.com/in/muhammad-wattad-ph-d-30139039/",
   },
 ];
 
