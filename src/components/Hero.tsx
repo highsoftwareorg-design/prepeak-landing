@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { LightOrbs } from "./LightOrbs";
 import logo from "@/assets/logo-new.png";
 import serverRoom from "@/assets/server-room-hero.jpg";
@@ -130,37 +128,6 @@ export function Hero() {
           downtime, protecting equipment, and unlocking up to 30% of stranded power capacity.
         </motion.p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1 }}
-          className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <Button
-            asChild
-            size="lg"
-            className="group h-14 px-8 text-base font-semibold tracking-tight
-                       bg-[image:var(--gradient-cta)] text-primary-foreground
-                       shadow-[0_10px_40px_-10px] shadow-primary/70
-                       transition-all duration-300 hover:scale-[1.05]
-                       hover:shadow-[0_20px_70px_-8px] hover:shadow-primary"
-          >
-            <a href="#contact">
-              Request a Pilot
-              <ArrowRight className="ml-1 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="h-14 px-8 text-base border-border/80 bg-surface/40 hover:bg-surface backdrop-blur-xl
-                       transition-all duration-300 hover:scale-[1.05] hover:border-primary/60
-                       hover:shadow-[0_18px_50px_-12px] hover:shadow-primary/40"
-          >
-            <a href="#how">See How It Works</a>
-          </Button>
-        </motion.div>
 
       </div>
     </section>
