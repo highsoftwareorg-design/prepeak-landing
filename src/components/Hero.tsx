@@ -180,14 +180,6 @@ export function Hero() {
           </Button>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.2 }}
-          className="relative mx-auto mt-16 max-w-3xl"
-        >
-          <SpikeWaveform />
-        </motion.div>
       </div>
     </section>
   );
