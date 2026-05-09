@@ -65,7 +65,9 @@ export function Team() {
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
                   <div className="mt-5 flex items-center gap-3">
                     <a
-                      href="#"
+                      href={m.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-muted-foreground hover:text-foreground transition-colors hover:scale-110 inline-block"
                     >
                       <Linkedin className="h-4 w-4" />
