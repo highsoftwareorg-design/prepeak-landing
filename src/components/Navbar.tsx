@@ -6,11 +6,8 @@ import logo from "@/assets/navbar-logo.png";
 
 const links = [
   { label: "The Problem", href: "#problem" },
+  { label: "The Solution", href: "#solution" },
   { label: "How it Works", href: "#how" },
-  { label: "Results", href: "#results" },
-  { label: "Compare", href: "#competitors" },
-  { label: "Market", href: "#market" },
-  { label: "Team", href: "#team" },
 ];
 
 export function Navbar() {
