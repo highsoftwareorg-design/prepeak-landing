@@ -9,7 +9,7 @@ const team = [
     role: "Founder & CEO",
     bio: "Senior Electrical Engineer with extensive experience designing large-scale, mission-critical electrical systems.",
     image: musabImg,
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/musab-mahamid-13aa0382/",
   },
   {
     name: "Muhammad Wattad",
