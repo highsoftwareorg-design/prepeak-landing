@@ -27,13 +27,13 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent backdrop-blur-md",
       ].join(" ")}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 group">
           <motion.img
             src={logo}
             alt="PrePeak"
             loading="eager"
-            className="h-9 w-auto"
+            className="h-14 w-auto"
             whileHover={{ rotate: -4, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
           />
