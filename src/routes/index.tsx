@@ -43,8 +43,6 @@ function Index() {
       <main>
         <Hero />
         <SectionDivider />
-        <Services />
-        <SectionDivider flip />
         <ProcessTimeline />
         <SectionDivider />
         <Team />
