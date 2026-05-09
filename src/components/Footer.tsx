@@ -16,7 +16,7 @@ export function Footer() {
           </p>
 
           <div className="flex items-center gap-4">
-            <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a href="https://www.linkedin.com/company/121304542" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
               <Linkedin className="h-4 w-4" />
             </a>
           </div>
