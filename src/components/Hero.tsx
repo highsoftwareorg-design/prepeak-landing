@@ -15,7 +15,7 @@ export function Hero() {
           alt=""
           loading="eager"
           decoding="async"
-          className="h-full w-full object-cover object-center opacity-100 brightness-[0.95] saturate-[0.6]"
+          className="h-full w-full object-cover object-center opacity-100 brightness-[0.45] saturate-[0.55]"
           width={1920}
           height={1080}
         />
@@ -35,9 +35,9 @@ export function Hero() {
         <ServerLeds />
 
         {/* Soft overlays for legibility while keeping the room visible */}
-        <div className="absolute inset-0 bg-background/15" />
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/80 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background via-background/70 to-transparent" />
+        <div className="absolute inset-0 bg-background/55" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background/90 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background via-background/80 to-transparent" />
       </div>
 
       <div className="absolute inset-0 -z-10 mix-blend-screen opacity-60">
@@ -102,7 +102,7 @@ export function Hero() {
           <motion.img
             src={logo}
             alt="PrePeak"
-            className="h-40 md:h-56 lg:h-64 w-auto drop-shadow-[0_0_60px_oklch(0.82_0.21_142_/_0.6)] border-slate-200"
+            className="h-56 md:h-72 lg:h-96 w-auto drop-shadow-[0_0_60px_oklch(0.82_0.21_142_/_0.6)] border-slate-200"
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           />
@@ -134,8 +134,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="mt-6 text-balance text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]"
         >
-          AI-Powered Power Stability for{" "}
-          <span className="text-gradient-accent">AI Data Centers.</span>
+          AI-Powered Power Stability for AI Data Centers.
         </motion.h1>
 
         <motion.p
