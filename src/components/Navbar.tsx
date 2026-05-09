@@ -27,7 +27,7 @@ export function Navbar() {
           : "border-b border-transparent bg-transparent backdrop-blur-md",
       ].join(" ")}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-2 group">
           <motion.img
             src={logo}
