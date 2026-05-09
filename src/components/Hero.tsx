@@ -1,6 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { LightOrbs } from "./LightOrbs";
 import logo from "@/assets/logo-new.png";
 import serverRoom from "@/assets/server-room-hero.jpg";
