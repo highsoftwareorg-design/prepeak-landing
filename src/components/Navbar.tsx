@@ -33,7 +33,7 @@ export function Navbar() {
             src={logo}
             alt="PrePeak"
             loading="eager"
-            className="h-9 w-auto"
+            className="h-14 w-auto"
             whileHover={{ rotate: -4, scale: 1.05 }}
             transition={{ type: "spring", stiffness: 300, damping: 18 }}
           />
