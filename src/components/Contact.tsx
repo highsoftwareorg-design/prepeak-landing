@@ -26,7 +26,7 @@ export function Contact() {
           <div>
             <p className="text-xs font-mono uppercase tracking-widest text-primary">Contact</p>
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
-              Let's build the <span className="text-gradient-accent">AI stability</span> together.
+              Get in <span className="text-gradient-accent">touch</span>.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
               60–90 day pilot. Monitoring-first. No operational risk. We don't ask for trust — we
