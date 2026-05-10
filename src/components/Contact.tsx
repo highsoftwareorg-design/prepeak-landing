@@ -92,7 +92,7 @@ export function Contact() {
                          shadow-[0_8px_30px_-8px] shadow-primary/60
                          transition-transform hover:scale-[1.02]"
             >
-              {sent ? "Message sent ✓" : "Request a Pilot"}
+              {sent ? "Message sent ✓" : "send"}
             </Button>
           </form>
         </motion.div>
