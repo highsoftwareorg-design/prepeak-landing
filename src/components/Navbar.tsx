@@ -60,7 +60,7 @@ export function Navbar() {
           size="sm"
           className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground
                      hover:from-primary hover:to-primary shadow-[0_4px_16px_-4px] shadow-primary/50
-                     transition-transform hover:scale-105"
+                     transition-transform hover:scale-105 text-lg"
         >
           <a href="#contact">Contact</a>
         </Button>
