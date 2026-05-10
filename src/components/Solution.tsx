@@ -1,14 +1,4 @@
 import { motion } from "framer-motion";
-import { Check } from "lucide-react";
-
-const benefits = [
-  "Prevention of UPS bypass events",
-  "Reduced battery degradation",
-  "Improved power stability",
-  "Better utilization of existing power capacity",
-  "Reduced need for costly infrastructure oversizing",
-  "Protection of AI workload performance without interfering with computation",
-];
 
 export function Solution() {
   return (
