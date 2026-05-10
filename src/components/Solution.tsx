@@ -49,18 +49,6 @@ export function Solution() {
             </p>
           </div>
 
-          <div className="mt-10 glass rounded-2xl p-8">
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">Key benefits</p>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {benefits.map((b) => (
-                <li key={b} className="flex items-start gap-3 text-foreground/90">
-                  <Check className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={2.5} />
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <p className="mt-10 text-xl text-foreground leading-relaxed">
             Instead of reacting after a power spike impacts the system,{" "}
             <span className="text-gradient-accent font-semibold">
