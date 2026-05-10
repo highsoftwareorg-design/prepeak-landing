@@ -121,11 +121,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground"
+          className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground whitespace-pre-line"
         >
-          We predict GPU power spikes{" "}
-          <strong className="text-foreground">1000ms before they occur</strong> — preventing
-          downtime, protecting equipment, and unlocking up to 30% of stranded power capacity.
+          PrePeak predicts and mitigates ultra-fast GPU-driven power spikes in AI
+          data centers before they impact critical infrastructure - without modifying workloads.
         </motion.p>
 
 
