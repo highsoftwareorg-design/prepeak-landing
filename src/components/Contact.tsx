@@ -54,7 +54,7 @@ export function Contact() {
                 <label className="text-xs text-muted-foreground font-mono">NAME</label>
                 <Input
                   required
-                  placeholder="Jane Doe"
+                  placeholder=""
                   className="mt-1.5 bg-background/40 border-border"
                 />
               </div>
