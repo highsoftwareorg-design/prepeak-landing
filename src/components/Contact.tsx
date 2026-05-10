@@ -86,6 +86,12 @@ export function Contact() {
                 className="mt-1.5 bg-background/40 border-border resize-none"
               />
             </div>
+            <div className="flex items-center gap-2">
+              <Checkbox id="privacy" required />
+              <label htmlFor="privacy" className="text-sm text-muted-foreground">
+                I agree to the Privacy Policy
+              </label>
+            </div>
             <Button
               type="submit"
               size="lg"
