@@ -61,7 +61,7 @@ export function Contact() {
               <div>
                 <label className="text-xs text-muted-foreground font-mono">COMPANY</label>
                 <Input
-                  placeholder="Data Center Inc."
+                  placeholder=""
                   className="mt-1.5 bg-background/40 border-border"
                 />
               </div>
