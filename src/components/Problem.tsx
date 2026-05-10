@@ -41,21 +41,6 @@ export function Problem() {
             </p>
           </div>
 
-          <div className="mt-10 glass rounded-2xl p-8">
-            <p className="font-mono text-xs uppercase tracking-widest text-primary">The result</p>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {results.map((r) => (
-                <li key={r} className="flex items-start gap-3 text-foreground/90">
-                  <AlertTriangle
-                    className="mt-1 h-4 w-4 shrink-0 text-primary"
-                    strokeWidth={2}
-                  />
-                  <span>{r}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <p className="mt-10 text-xl text-foreground leading-relaxed">
             The problem isn&apos;t energy.
             <br />
