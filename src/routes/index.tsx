@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
+import { Problem } from "@/components/Problem";
+import { Solution } from "@/components/Solution";
 import { ProcessTimeline } from "@/components/ProcessTimeline";
 
 import { Team } from "@/components/Team";
@@ -42,6 +44,10 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
+        <SectionDivider />
+        <Problem />
+        <SectionDivider />
+        <Solution />
         <SectionDivider />
         <ProcessTimeline />
         <SectionDivider />
