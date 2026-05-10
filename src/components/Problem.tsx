@@ -1,12 +1,4 @@
 import { motion } from "framer-motion";
-import { AlertTriangle } from "lucide-react";
-
-const results = [
-  "Higher infrastructure costs",
-  "Stranded power capacity",
-  "Reduced operational efficiency",
-  "Increased risk to uptime",
-];
 
 export function Problem() {
   return (
