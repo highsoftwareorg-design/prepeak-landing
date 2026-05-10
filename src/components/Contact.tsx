@@ -82,7 +82,7 @@ export function Contact() {
               <Textarea
                 required
                 rows={4}
-                placeholder="MW capacity, GPU fleet, current pain points..."
+                placeholder=""
                 className="mt-1.5 bg-background/40 border-border resize-none"
               />
             </div>
