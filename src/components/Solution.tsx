@@ -1,4 +1,14 @@
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
+
+const benefits = [
+  "Prevention of UPS bypass events",
+  "Reduced battery degradation",
+  "Improved power stability",
+  "Better utilization of existing power capacity",
+  "Reduced need for costly infrastructure oversizing",
+  "Protection of AI workload performance without interfering with computation",
+];
 
 export function Solution() {
   return (
@@ -37,6 +47,18 @@ export function Solution() {
               customer GPU workloads. The system operates entirely at the power infrastructure
               layer, without impacting compute performance, latency, or SLA commitments.
             </p>
+          </div>
+
+          <div className="mt-10 glass rounded-2xl p-8">
+            <p className="font-mono text-xs uppercase tracking-widest text-primary">Key benefits</p>
+            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+              {benefits.map((b) => (
+                <li key={b} className="flex items-start gap-3 text-foreground/90">
+                  <Check className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={2.5} />
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <p className="mt-10 text-xl text-foreground leading-relaxed">
