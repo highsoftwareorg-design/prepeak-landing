@@ -28,9 +28,8 @@ export function Contact() {
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
               Get in <span className="text-gradient-accent">touch</span>.
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed max-w-md">
-              60–90 day pilot. Monitoring-first. No operational risk. We don't ask for trust — we
-              prove value first.
+            <p className="mt-4 text-muted-foreground leading-relaxed max-w-md text-xl">
+              Get in touch
             </p>
             <a
               href="mailto:hello@prepeak.ai"
