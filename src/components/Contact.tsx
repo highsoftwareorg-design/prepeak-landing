@@ -71,7 +71,7 @@ export function Contact() {
               <Input
                 required
                 type="email"
-                placeholder="you@company.com"
+                placeholder=""
                 className="mt-1.5 bg-background/40 border-border"
               />
             </div>
