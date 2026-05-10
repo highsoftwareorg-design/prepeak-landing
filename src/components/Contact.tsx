@@ -4,6 +4,7 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -84,6 +85,12 @@ export function Contact() {
                 placeholder="MW capacity, GPU fleet, current pain points..."
                 className="mt-1.5 bg-background/40 border-border resize-none"
               />
+            </div>
+            <div className="flex items-center gap-2">
+              <Checkbox id="privacy" required />
+              <label htmlFor="privacy" className="text-sm text-muted-foreground">
+                I agree to the Privacy Policy
+              </label>
             </div>
             <Button
               type="submit"
