@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { Linkedin } from "lucide-react";
 
 export function Footer() {
@@ -16,22 +17,27 @@ export function Footer() {
           </p>
 
           <div className="flex items-center gap-4">
-            <a href="https://www.linkedin.com/company/121304542" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+            <a
+              href="https://www.linkedin.com/company/121304542"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
               <Linkedin className="h-4 w-4" />
             </a>
           </div>
         </div>
 
         <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-6 gap-y-2 border-t border-border/30 pt-6 text-xs text-muted-foreground">
-          <a href="/privacy" className="hover:text-foreground transition-colors">
+          <Link to="/privacy" className="hover:text-foreground transition-colors">
             Privacy Policy
-          </a>
-          <a href="/terms" className="hover:text-foreground transition-colors">
+          </Link>
+          <Link to="/terms" className="hover:text-foreground transition-colors">
             Terms of Use
-          </a>
-          <a href="/cookies" className="hover:text-foreground transition-colors">
+          </Link>
+          <Link to="/cookies" className="hover:text-foreground transition-colors">
             Cookie Policy
-          </a>
+          </Link>
         </div>
       </div>
     </footer>
