@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,16 +15,19 @@ export function Contact() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  useEffect(() => {
-    setSent(false);
-  }, [name, company, email, message]);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
       await sendContactEmail({ data: { name, company, email, message } as any });
       setSent(true);
+      setTimeout(() => {
+        setName("");
+        setCompany("");
+        setEmail("");
+        setMessage("");
+        setSent(false);
+      }, 2000);
     } catch (err) {
       console.error(err);
     } finally {
