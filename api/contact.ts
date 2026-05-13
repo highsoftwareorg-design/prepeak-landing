@@ -10,8 +10,8 @@ export const sendContactEmail = createServerFn({ method: "POST" }).handler(
     };
 
 const request = getRequest();
-    const env = (request as any)?.cloudflare?.env ?? process.env;
-    const RESEND_API_KEY = env.RESEND_API_KEY;
+
+    const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not set");
