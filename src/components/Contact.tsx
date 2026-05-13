@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { ArrowUpRight, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,12 +13,20 @@ export function Contact() {
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [error, setError] = useState<string | null>(null);
+  const [debugInfo, setDebugInfo] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null);
+    setDebugInfo(null);
+
     try {
-      await sendContactEmail({ data: { name, company, email, message } as any });
+      console.log("[Contact] Submitting form...");
+      const result = await sendContactEmail({ data: { name, company, email, message } as any });
+      console.log("[Contact] Success:", result);
+      setDebugInfo(`✓ Success: ${JSON.stringify(result)}`);
       setSent(true);
       setTimeout(() => {
         setName("");
@@ -27,9 +34,15 @@ export function Contact() {
         setEmail("");
         setMessage("");
         setSent(false);
-      }, 2000);
-    } catch (err) {
-      console.error(err);
+        setDebugInfo(null);
+      }, 5000);
+    } catch (err: any) {
+      console.error("[Contact] Error:", err);
+      const msg = err?.message || err?.toString() || "Unknown error";
+      const status = err?.status || err?.statusCode || "no status";
+      const data = err?.data ? JSON.stringify(err.data) : "no data";
+      setError(`Error: ${msg}`);
+      setDebugInfo(`status: ${status} | data: ${data} | full: ${JSON.stringify(err)}`);
     } finally {
       setLoading(false);
     }
@@ -77,9 +90,27 @@ export function Contact() {
               <Checkbox id="privacy" required />
               <label htmlFor="privacy" className="text-sm text-muted-foreground">I agree to the Privacy Policy</label>
             </div>
-            <Button type="submit" disabled={loading || sent} size="lg" className="w-full h-12 text-base font-semibold bg-[image:var(--gradient-cta)] text-primary-foreground shadow-[0_8px_30px_-8px] shadow-primary/60 transition-transform hover:scale-[1.02]">
+
+            <Button
+              type="submit"
+              disabled={loading || sent}
+              size="lg"
+              className="w-full h-12 text-base font-semibold bg-[image:var(--gradient-cta)] text-primary-foreground shadow-[0_8px_30px_-8px] shadow-primary/60 transition-transform hover:scale-[1.02]"
+            >
               {sent ? "Message sent ✓" : loading ? "Sending..." : "send"}
             </Button>
+
+            {error && (
+              <div className="rounded-lg bg-red-500/10 border border-red-500/30 p-3">
+                <p className="text-red-400 text-sm font-mono">{error}</p>
+              </div>
+            )}
+
+            {debugInfo && (
+              <div className="rounded-lg bg-yellow-500/10 border border-yellow-500/30 p-3">
+                <p className="text-yellow-400 text-xs font-mono break-all">{debugInfo}</p>
+              </div>
+            )}
           </form>
         </motion.div>
       </div>
