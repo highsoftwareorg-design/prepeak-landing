@@ -1,20 +1,17 @@
-import { createServerFn } from "@tanstack/react-start";
+import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 
-export const sendContactEmail = createServerFn({ method: "POST" }).handler(
-  async (ctx) => {
-    const { name, company, email, message } = (ctx.data as unknown) as {
-      name: string;
-      company: string;
-      email: string;
-      message: string;
-    };
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method !== "POST") return res.status(405).end();
 
-    const RESEND_API_KEY = process.env.RESEND_API_KEY;
-    if (!RESEND_API_KEY) throw new Error("RESEND_API_KEY is not set");
+  const { name, company, email, message } = req.body;
 
-    const resend = new Resend(RESEND_API_KEY);
+  const RESEND_API_KEY = process.env.RESEND_API_KEY;
+  if (!RESEND_API_KEY) return res.status(500).json({ error: "RESEND_API_KEY is not set" });
 
+  const resend = new Resend(RESEND_API_KEY);
+
+  try {
     await resend.emails.send({
       from: "contact@updates.prepeak.ai",
       to: "musab@prepeak.ai",
@@ -32,7 +29,8 @@ export const sendContactEmail = createServerFn({ method: "POST" }).handler(
         </div>
       `,
     });
-
-    return { success: true };
+    return res.status(200).json({ success: true });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message });
   }
-);
+}

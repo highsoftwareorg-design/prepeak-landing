@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
-import { sendContactEmail } from "../../api/contact";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
@@ -16,37 +15,30 @@ export function Contact() {
   const [error, setError] = useState<string | null>(null);
   const [debugInfo, setDebugInfo] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setDebugInfo(null);
-
-    try {
-      console.log("[Contact] Submitting form...");
-      const result = await sendContactEmail({ data: { name, company, email, message } as any });
-      console.log("[Contact] Success:", result);
-      setDebugInfo(`✓ Success: ${JSON.stringify(result)}`);
-      setSent(true);
-      setTimeout(() => {
-        setName("");
-        setCompany("");
-        setEmail("");
-        setMessage("");
-        setSent(false);
-        setDebugInfo(null);
-      }, 5000);
-    } catch (err: any) {
-      console.error("[Contact] Error:", err);
-      const msg = err?.message || err?.toString() || "Unknown error";
-      const status = err?.status || err?.statusCode || "no status";
-      const data = err?.data ? JSON.stringify(err.data) : "no data";
-      setError(`Error: ${msg}`);
-      setDebugInfo(`status: ${status} | data: ${data} | full: ${JSON.stringify(err)}`);
-    } finally {
-      setLoading(false);
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+  setError(null);
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, company, email, message }),
+    });
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || "Failed to send");
     }
-  };
+    setSent(true);
+    setTimeout(() => {
+      setName(""); setCompany(""); setEmail(""); setMessage(""); setSent(false);
+    }, 2000);
+  } catch (err: any) {
+    setError(err.message);
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <section id="contact" className="relative py-32 border-t border-border/40 overflow-hidden">
