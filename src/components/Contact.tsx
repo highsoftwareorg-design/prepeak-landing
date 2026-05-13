@@ -33,11 +33,11 @@ export function Contact() {
               Get in touch
             </p>
             <a
-              href="mailto:info@prepeak.ai"
+              href="mailto:musab@prepeak.ai"
               className="mt-8 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors"
             >
               <Mail className="h-4 w-4" />
-              info@prepeak.ai
+              musab@prepeak.ai
               <ArrowUpRight className="h-4 w-4" />
             </a>
           </div>

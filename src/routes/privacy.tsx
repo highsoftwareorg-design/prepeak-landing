@@ -82,8 +82,8 @@ function PrivacyPage() {
             <h2 className="text-2xl font-semibold text-foreground">Contact</h2>
             <p className="mt-3">
               If you have any questions regarding this Privacy Policy, please contact us at:{" "}
-              <a href="mailto:info@prepeak.ai" className="text-primary hover:underline">
-                info@prepeak.ai
+              <a href="mailto:musab@prepeak.ai" className="text-primary hover:underline">
+                musab@prepeak.ai
               </a>
             </p>
           </section>
