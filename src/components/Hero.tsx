@@ -28,15 +28,7 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background via-background/80 to-transparent" />
       </div>
 
-      <div className="absolute inset-0 -z-10 mix-blend-screen opacity-60">
-        <LightOrbs density="subtle" />
-      </div>
-
-      <div
-        className="absolute inset-0 -z-10"
-        style={{ background: "var(--gradient-hero)" }}
-        aria-hidden
-      />
+    
   
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
