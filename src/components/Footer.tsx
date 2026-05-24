@@ -28,14 +28,14 @@ export function Footer() {
               href="https://www.linkedin.com/company/121304542"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-foreground transition-colors"
+              className="text-white/90 hover:text-foreground transition-colors"
             >
               <Linkedin className="h-4 w-4" />
             </a>
-            <p className="text-xs text-muted-foreground font-mono">
+            <p className="text-xs text-white/90 font-mono">
               © {new Date().getFullYear()} PrePeak.ai — We act before the peak.
             </p>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-white/90">
               <Link to="/privacy" className="hover:text-foreground transition-colors">
                 Privacy Policy
               </Link>

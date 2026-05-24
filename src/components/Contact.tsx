@@ -56,31 +56,31 @@ const handleSubmit = async (e: React.FormEvent) => {
             <h2 className="mt-3 text-4xl md:text-5xl font-semibold tracking-tight">
               Get in <span className="text-gradient-accent">touch</span>.
             </h2>
-            <p className="mt-4 text-muted-foreground leading-relaxed max-w-md text-xl">Get in touch</p>
+            <p className="mt-4 text-white/90 leading-relaxed max-w-md text-xl">Get in touch</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="glass-strong rounded-2xl p-6 space-y-4">
+          <form onSubmit={handleSubmit}className="rounded-2xl p-6 space-y-4 bg-black/70 border border-green-500/20">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="text-xs text-muted-foreground font-mono">NAME</label>
+                <label className="text-base text-white font-mono">NAME</label>
                 <Input required value={name} onChange={(e) => setName(e.target.value)} className="mt-1.5 bg-background/40 border-border" />
               </div>
               <div>
-                <label className="text-xs text-muted-foreground font-mono">COMPANY</label>
+                <label className="text-base text-white font-mono">COMPANY</label>
                 <Input value={company} onChange={(e) => setCompany(e.target.value)} className="mt-1.5 bg-background/40 border-border" />
               </div>
             </div>
             <div>
-              <label className="text-xs text-muted-foreground font-mono">EMAIL</label>
+              <label className="text-base text-white font-mono">EMAIL</label>
               <Input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="mt-1.5 bg-background/40 border-border" />
             </div>
             <div>
-              <label className="text-xs font-mono text-muted-foreground">TELL US ABOUT YOUR INFRASTRUCTURE</label>
+              <label className="text-base font-mono text-white">MESSAGE</label>
               <Textarea required rows={4} value={message} onChange={(e) => setMessage(e.target.value)} className="mt-1.5 bg-background/40 border-border resize-none" />
             </div>
             <div className="flex items-center gap-2">
               <Checkbox id="privacy" required />
-              <label htmlFor="privacy" className="text-sm text-muted-foreground">I agree to the Privacy Policy</label>
+              <label htmlFor="privacy" className="text-sm text-white">I agree to the Privacy Policy</label>
             </div>
 
             <Button

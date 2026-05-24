@@ -27,7 +27,7 @@ export function Solution() {
             <span className="text-gradient-accent">predictive infrastructure layer.</span>
           </h2>
 
-          <div className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="mt-10 space-y-6 text-xl text-white/90 leading-relaxed">
             <p>
               PrePeak is an AI-powered predictive infrastructure layer designed to manage power
               transients in AI data centers.
@@ -39,7 +39,7 @@ export function Solution() {
             </p>
             <p>
               When a potential event is detected, PrePeak automatically activates ultra-fast
-              energy buffers — such as flywheels, supercapacitors, or energy storage systems — to
+              energy buffers such as flywheels, supercapacitors, or energy storage systems to
               stabilize the infrastructure and prevent excessive stress on the UPS.
             </p>
             <p>
@@ -66,7 +66,7 @@ export function Solution() {
             <span className="text-gradient-accent font-semibold">
               PrePeak predicts and mitigates the event in real time
             </span>{" "}
-            — before it happens.
+            before it happens.
           </p>
         </motion.div>
       </div>

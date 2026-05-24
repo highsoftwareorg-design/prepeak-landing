@@ -18,16 +18,6 @@ export function Hero() {
           height={1080}
         />
 
-        {/* Animated green LED breathing pulse — global ambient (reduced) */}
-        <motion.div
-          className="absolute inset-0 mix-blend-screen pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 60% 40% at 50% 55%, oklch(0.82 0.21 142 / 0.04), transparent 70%)",
-          }}
-          animate={{ opacity: [0.06, 0.14, 0.08, 0.12, 0.06] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        />
 
         {/* Flickering LED dots scattered along server racks */}
         <ServerLeds />
@@ -42,53 +32,12 @@ export function Hero() {
         <LightOrbs density="subtle" />
       </div>
 
-      {/* Floating animated blobs (gel/blob effect) */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none" aria-hidden>
-        <span
-          className="blob"
-          style={{
-            top: "-10%",
-            left: "-8%",
-            width: 520,
-            height: 520,
-            background: "radial-gradient(circle, oklch(0.82 0.21 142 / 0.45), transparent 70%)",
-            animationDelay: "0s",
-          }}
-        />
-        <span
-          className="blob"
-          style={{
-            top: "20%",
-            right: "-10%",
-            width: 460,
-            height: 460,
-            background: "radial-gradient(circle, oklch(0.62 0.2 155 / 0.4), transparent 70%)",
-            animationDelay: "-6s",
-          }}
-        />
-        <span
-          className="blob"
-          style={{
-            bottom: "-15%",
-            left: "30%",
-            width: 600,
-            height: 600,
-            background: "radial-gradient(circle, oklch(0.86 0.2 140 / 0.3), transparent 70%)",
-            animationDelay: "-12s",
-          }}
-        />
-      </div>
-
       <div
         className="absolute inset-0 -z-10"
         style={{ background: "var(--gradient-hero)" }}
         aria-hidden
       />
-      <div
-        className="absolute inset-0 -z-10 animated-gradient mix-blend-screen opacity-70"
-        aria-hidden
-      />
-
+  
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
         <motion.div
@@ -121,7 +70,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.85 }}
-          className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground whitespace-pre-line"
+          className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-white whitespace-pre-line"
         >
           PrePeak predicts and mitigates ultra-fast GPU-driven power spikes in AI
           data centers before they impact critical infrastructure - without modifying workloads.

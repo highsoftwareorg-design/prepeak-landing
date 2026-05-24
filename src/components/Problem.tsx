@@ -25,7 +25,7 @@ export function Problem() {
             <span className="text-gradient-accent">power instability.</span>
           </h2>
 
-          <div className="mt-10 space-y-6 text-lg text-muted-foreground leading-relaxed">
+          <div className="mt-10 space-y-6 text-xl text-white/90 leading-relaxed">
             <p>
               Modern GPU clusters create ultra-fast, synchronized power spikes that traditional
               electrical infrastructure was never designed to handle.
@@ -35,7 +35,7 @@ export function Problem() {
               increase battery stress, and create costly downtime risks.
             </p>
             <p>
-              To protect against these events, operators are forced to overbuild infrastructure —
+              To protect against these events, operators are forced to overbuild infrastructure,
               adding larger battery systems or leaving up to 30% of power capacity underutilized
               as a safety margin.
             </p>

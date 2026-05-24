@@ -40,7 +40,7 @@ export function ProcessTimeline() {
             From reactive to{" "}
             <span className="text-gradient-accent">predictive power management.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-white/90 text-lg">
             PrePeak combines sensors, AI algorithms, and intelligent control into one embedded
             layer.
           </p>
@@ -65,7 +65,7 @@ export function ProcessTimeline() {
                   <span className="font-mono text-xs text-muted-foreground">{p.n}</span>
                 </div>
                 <h3 className="mt-5 text-lg font-semibold">{p.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                <p className="mt-2 text-sm text-white/90 leading-relaxed">{p.desc}</p>
               </div>
             </motion.div>
           ))}

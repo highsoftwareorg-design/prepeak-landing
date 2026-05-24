@@ -45,7 +45,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="relative text-sm text-muted-foreground hover:text-foreground transition-colors
+              className="relative text-base font-semibold text-white hover:text-foreground transition-colors
                          after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0
                          after:bg-gradient-to-r after:from-primary after:to-transparent
                          after:transition-all hover:after:w-full"

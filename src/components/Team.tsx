@@ -30,7 +30,7 @@ export function Team() {
             Built by engineers who've shipped{" "}
             <span className="text-gradient-accent">mission-critical systems.</span>
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-white">
             All technology, code, and IP fully owned by PrePeak — patent covers a predictive AI
             control layer for synchronized GPU workloads.
           </p>
@@ -62,7 +62,7 @@ export function Team() {
                 <div className="flex-1">
                   <h3 className="text-xl font-semibold">{m.name}</h3>
                   <p className="text-sm text-primary font-mono">{m.role}</p>
-                  <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
+                  <p className="mt-3 text-sm text-white/90 leading-relaxed">{m.bio}</p>
                   <div className="mt-5 flex items-center gap-3">
                     <a
                       href={m.linkedin}
