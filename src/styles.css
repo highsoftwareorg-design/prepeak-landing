@@ -276,6 +276,101 @@
   }
 }
 
+/* ---------- Accessibility widget (WCAG 2.1 AA helpers) ---------- */
+:root {
+  --a11y-font-scale: 1;
+}
+
+html {
+  font-size: calc(100% * var(--a11y-font-scale));
+}
+
+/* Visible focus indicator everywhere */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip link */
+.a11y-skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 200;
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  font-weight: 600;
+  transition: top 150ms ease;
+}
+.a11y-skip-link:focus {
+  top: 1rem;
+}
+
+html.a11y-contrast body {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.95 0 0);
+  --card: oklch(0.11 0 0);
+  --surface: oklch(0.11 0 0);
+  --surface-elevated: oklch(0.15 0 0);
+  --popover: oklch(0.11 0 0);
+  --border: oklch(1 0 0 / 0.8);
+  --primary: oklch(0.9 0.22 142);
+  --primary-foreground: oklch(0.08 0 0);
+}
+html.a11y-contrast .text-gradient,
+html.a11y-contrast .text-gradient-accent {
+  background: none;
+  color: var(--color-foreground);
+  -webkit-text-fill-color: var(--color-foreground);
+}
+html.a11y-contrast img {
+  filter: contrast(1.15);
+}
+
+html.a11y-links a {
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  font-weight: 600;
+}
+
+html.a11y-readable,
+html.a11y-readable body,
+html.a11y-readable * {
+  font-family: Verdana, Tahoma, Arial, sans-serif !important;
+  letter-spacing: 0.01em;
+}
+
+html.a11y-no-motion *,
+html.a11y-no-motion *::before,
+html.a11y-no-motion *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+html.a11y-big-cursor,
+html.a11y-big-cursor * {
+  cursor:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'%3E%3Cpath d='M5 2l14 9-6 1 4 7-3 2-4-7-5 4z' fill='white' stroke='black' stroke-width='1.2'/%3E%3C/svg%3E")
+      0 0,
+    auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
 @font-face {
   font-family: "Inter";
   font-style: normal;
