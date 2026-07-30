@@ -17,7 +17,7 @@ export const Route = createFileRoute("/privacy")({
 function PrivacyPage() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-3xl px-6 py-24">
+      <main id="main-content" className="mx-auto max-w-3xl px-6 py-24">
         <Link to="/" className="text-sm text-primary hover:underline">
           ← Back to home
         </Link>
@@ -88,7 +88,7 @@ function PrivacyPage() {
             </p>
           </section>
         </div>
-      </div>
+      </main>
     </div>
   );
 }

@@ -42,7 +42,7 @@ function Index() {
       className="min-h-screen bg-background bg-app-grid text-foreground"
     >
       <Navbar />
-      <main>
+      <main id="main-content">
         <Hero />
         <SectionDivider />
         <Problem />
