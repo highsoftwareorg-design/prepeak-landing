@@ -7,6 +7,7 @@ import {
   useRouter,
 } from "@tanstack/react-router";
 
+import { AccessibilityWidget } from "@/components/AccessibilityWidget";
 import appCss from "../styles.css?url";
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
@@ -132,5 +133,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <a href="#main-content" className="a11y-skip-link">
+        Skip to main content
+      </a>
+      <Outlet />
+      <AccessibilityWidget />
+    </>
+  );
 }
