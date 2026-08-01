@@ -81,8 +81,8 @@ export function Contact() {
         setPrivacy(false);
         setSent(false);
       }, 2000);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unknown error occurred");
     } finally {
       setLoading(false);
     }
