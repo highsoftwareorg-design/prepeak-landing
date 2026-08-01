@@ -361,6 +361,30 @@ html.a11y-big-cursor * {
     auto;
 }
 
+/* Increased text spacing (WCAG 1.4.12) */
+html.a11y-spacing body,
+html.a11y-spacing p,
+html.a11y-spacing li,
+html.a11y-spacing span,
+html.a11y-spacing a,
+html.a11y-spacing h1,
+html.a11y-spacing h2,
+html.a11y-spacing h3 {
+  line-height: 1.75 !important;
+  letter-spacing: 0.06em !important;
+  word-spacing: 0.16em !important;
+}
+html.a11y-spacing p {
+  margin-bottom: 1.5em !important;
+}
+
+/* Always-visible focus indicator (WCAG 2.4.7) */
+html.a11y-focus :where(a, button, input, select, textarea, [tabindex]):focus {
+  outline: 3px solid var(--color-ring) !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px oklch(0.82 0.21 142 / 0.35) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
