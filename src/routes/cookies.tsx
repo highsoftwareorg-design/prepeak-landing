@@ -50,8 +50,7 @@ function CookiesPage() {
           <section>
             <h2 className="text-2xl font-semibold text-foreground">Third-Party Cookies</h2>
             <p className="mt-3">
-              Some third-party services, such as Google Analytics, may place cookies on your
-              device.
+              Some third-party services, such as Google Analytics, may place cookies on your device.
             </p>
           </section>
 

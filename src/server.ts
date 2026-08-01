@@ -27,7 +27,9 @@ async function normalizeSsrErrorResponse(response: Response): Promise<Response> 
     return response;
   }
 
-  console.error(consumeLastCapturedError() ?? new Error(`SSR returned an unhandled error: ${body}`));
+  console.error(
+    consumeLastCapturedError() ?? new Error(`SSR returned an unhandled error: ${body}`),
+  );
 
   return new Response(renderErrorPage(), {
     status: 500,

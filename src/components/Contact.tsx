@@ -43,7 +43,10 @@ export function Contact() {
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setFieldError({ field: "email", msg: `Please include an '@' in the email address. '${email}' is missing an '@'.` });
+      setFieldError({
+        field: "email",
+        msg: `Please include an '@' in the email address. '${email}' is missing an '@'.`,
+      });
       emailRef.current?.focus();
       return;
     }
@@ -71,10 +74,15 @@ export function Contact() {
       }
       setSent(true);
       setTimeout(() => {
-        setName(""); setCompany(""); setEmail(""); setMessage(""); setPrivacy(false); setSent(false);
+        setName("");
+        setCompany("");
+        setEmail("");
+        setMessage("");
+        setPrivacy(false);
+        setSent(false);
       }, 2000);
-    } catch (err: any) {
-      setError(err.message);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "An unknown error occurred");
     } finally {
       setLoading(false);
     }
@@ -82,7 +90,11 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-32 border-t border-border/40 overflow-hidden">
-      <div className="absolute inset-0" style={{ background: "var(--gradient-hero)" }} aria-hidden />
+      <div
+        className="absolute inset-0"
+        style={{ background: "var(--gradient-hero)" }}
+        aria-hidden
+      />
       <div className="relative mx-auto max-w-5xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -99,38 +111,82 @@ export function Contact() {
             <p className="mt-4 text-white/90 leading-relaxed max-w-md text-xl">Get in touch</p>
           </div>
 
-          <form onSubmit={handleSubmit} noValidate className="rounded-2xl p-6 space-y-4 bg-black/70 border border-green-500/20">
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="rounded-2xl p-6 space-y-4 bg-black/70 border border-green-500/20"
+          >
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="text-base text-white font-mono">NAME</label>
                 <div className="relative">
-                  <Input ref={nameRef} value={name} onChange={(e) => { setName(e.target.value); setFieldError(null); }} className="mt-1.5 bg-background/40 border-border" />
+                  <Input
+                    ref={nameRef}
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                      setFieldError(null);
+                    }}
+                    className="mt-1.5 bg-background/40 border-border"
+                  />
                   {fieldError?.field === "name" && <Tooltip msg={fieldError.msg} />}
                 </div>
               </div>
               <div>
                 <label className="text-base text-white font-mono">COMPANY</label>
-                <Input value={company} onChange={(e) => setCompany(e.target.value)} className="mt-1.5 bg-background/40 border-border" />
+                <Input
+                  value={company}
+                  onChange={(e) => setCompany(e.target.value)}
+                  className="mt-1.5 bg-background/40 border-border"
+                />
               </div>
             </div>
             <div>
               <label className="text-base text-white font-mono">EMAIL</label>
               <div className="relative">
-                <Input ref={emailRef} type="text" value={email} onChange={(e) => { setEmail(e.target.value); setFieldError(null); }} className="mt-1.5 bg-background/40 border-border" />
+                <Input
+                  ref={emailRef}
+                  type="text"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    setFieldError(null);
+                  }}
+                  className="mt-1.5 bg-background/40 border-border"
+                />
                 {fieldError?.field === "email" && <Tooltip msg={fieldError.msg} />}
               </div>
             </div>
             <div>
               <label className="text-base font-mono text-white">MESSAGE</label>
               <div className="relative">
-                <Textarea ref={messageRef} rows={4} value={message} onChange={(e) => { setMessage(e.target.value); setFieldError(null); }} className="mt-1.5 bg-background/40 border-border resize-none" />
+                <Textarea
+                  ref={messageRef}
+                  rows={4}
+                  value={message}
+                  onChange={(e) => {
+                    setMessage(e.target.value);
+                    setFieldError(null);
+                  }}
+                  className="mt-1.5 bg-background/40 border-border resize-none"
+                />
                 {fieldError?.field === "message" && <Tooltip msg={fieldError.msg} />}
               </div>
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <Checkbox ref={privacyRef} id="privacy" checked={privacy} onCheckedChange={(v) => { setPrivacy(v as boolean); setFieldError(null); }} />
-                <label htmlFor="privacy" className="text-sm text-white">I agree to the Privacy Policy</label>
+                <Checkbox
+                  ref={privacyRef}
+                  id="privacy"
+                  checked={privacy}
+                  onCheckedChange={(v) => {
+                    setPrivacy(v as boolean);
+                    setFieldError(null);
+                  }}
+                />
+                <label htmlFor="privacy" className="text-sm text-white">
+                  I agree to the Privacy Policy
+                </label>
               </div>
               {fieldError?.field === "privacy" && (
                 <div className="relative">

@@ -18,7 +18,6 @@ export function Hero() {
           height={1080}
         />
 
-
         {/* Flickering LED dots scattered along server racks */}
         <ServerLeds />
 
@@ -28,8 +27,6 @@ export function Hero() {
         <div className="absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-background via-background/80 to-transparent" />
       </div>
 
-    
-  
       <div className="relative mx-auto max-w-5xl px-6 text-center w-full">
         {/* Big animated logo (replaces wordmark) */}
         <motion.div
@@ -47,8 +44,6 @@ export function Hero() {
           />
         </motion.div>
 
-
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,11 +59,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.85 }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-white whitespace-pre-line"
         >
-          PrePeak predicts and mitigates ultra-fast GPU-driven power spikes in AI
-          data centers before they impact critical infrastructure - without modifying workloads.
+          PrePeak predicts and mitigates ultra-fast GPU-driven power spikes in AI data centers
+          before they impact critical infrastructure - without modifying workloads.
         </motion.p>
-
-
       </div>
     </section>
   );
