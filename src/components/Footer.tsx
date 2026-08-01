@@ -24,7 +24,7 @@ export function Footer() {
           </a>
 
           <div className="flex flex-col md:items-end items-start gap-3 justify-self-start md:justify-self-end">
-          <a
+            <a
               href="https://www.linkedin.com/company/121304542"
               target="_blank"
               rel="noopener noreferrer"

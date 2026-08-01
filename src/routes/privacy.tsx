@@ -21,9 +21,7 @@ function PrivacyPage() {
         <Link to="/" className="text-sm text-primary hover:underline">
           ← Back to home
         </Link>
-        <h1 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">
-          Privacy Policy
-        </h1>
+        <h1 className="mt-6 text-4xl md:text-5xl font-semibold tracking-tight">Privacy Policy</h1>
         <p className="mt-2 text-sm text-muted-foreground font-mono">Last updated: May 2026</p>
 
         <div className="mt-10 space-y-8 text-muted-foreground leading-relaxed">

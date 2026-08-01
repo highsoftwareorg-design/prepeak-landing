@@ -38,14 +38,14 @@ export function Solution() {
               imminent power spikes before they occur.
             </p>
             <p>
-              When a potential event is detected, PrePeak automatically activates ultra-fast
-              energy buffers such as flywheels, supercapacitors, or energy storage systems to
-              stabilize the infrastructure and prevent excessive stress on the UPS.
+              When a potential event is detected, PrePeak automatically activates ultra-fast energy
+              buffers such as flywheels, supercapacitors, or energy storage systems to stabilize the
+              infrastructure and prevent excessive stress on the UPS.
             </p>
             <p>
-              Unlike other approaches, PrePeak does not modify, throttle, or interfere with
-              customer GPU workloads. The system operates entirely at the power infrastructure
-              layer, without impacting compute performance, latency, or SLA commitments.
+              Unlike other approaches, PrePeak does not modify, throttle, or interfere with customer
+              GPU workloads. The system operates entirely at the power infrastructure layer, without
+              impacting compute performance, latency, or SLA commitments.
             </p>
           </div>
 

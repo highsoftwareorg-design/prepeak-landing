@@ -108,7 +108,9 @@ export function AccessibilityWidget() {
       }
       if (e.key !== "Tab" || !panel) return;
       const focusables = Array.from(
-        panel.querySelectorAll<HTMLElement>("button, [href], input, [tabindex]:not([tabindex='-1'])"),
+        panel.querySelectorAll<HTMLElement>(
+          "button, [href], input, [tabindex]:not([tabindex='-1'])",
+        ),
       ).filter((el) => !el.hasAttribute("disabled"));
       if (focusables.length === 0) return;
       const first = focusables[0]!;

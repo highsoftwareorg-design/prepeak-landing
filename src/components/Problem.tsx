@@ -36,8 +36,8 @@ export function Problem() {
             </p>
             <p>
               To protect against these events, operators are forced to overbuild infrastructure,
-              adding larger battery systems or leaving up to 30% of power capacity underutilized
-              as a safety margin.
+              adding larger battery systems or leaving up to 30% of power capacity underutilized as
+              a safety margin.
             </p>
           </div>
 
@@ -46,10 +46,7 @@ export function Problem() {
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {results.map((r) => (
                 <li key={r} className="flex items-start gap-3 text-foreground/90">
-                  <AlertTriangle
-                    className="mt-1 h-4 w-4 shrink-0 text-primary"
-                    strokeWidth={2}
-                  />
+                  <AlertTriangle className="mt-1 h-4 w-4 shrink-0 text-primary" strokeWidth={2} />
                   <span>{r}</span>
                 </li>
               ))}
