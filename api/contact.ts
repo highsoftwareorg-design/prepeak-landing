@@ -30,7 +30,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       `,
     });
     return res.status(200).json({ success: true });
-  } catch (err: any) {
-    return res.status(500).json({ error: err.message });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : "An unknown error occurred";
+    return res.status(500).json({ error: message });
   }
 }
